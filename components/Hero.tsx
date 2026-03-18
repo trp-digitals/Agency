@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import MaxWrapper from "./ui/MaxWrapper";
 import { ArrowRight, Sparkles, Code2, Globe, Cpu } from "lucide-react";
+import Link from "next/link";
 
 const FloatingCard = ({ icon: Icon, title, delay, className }: any) => (
   <motion.div
@@ -90,14 +91,20 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 1.2 }}
             className="flex flex-col sm:flex-row gap-6"
           >
-            <button className="group relative px-10 py-5 rounded-full bg-primary text-white font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:scale-105 active:scale-95 neon-purple">
+            <Link 
+              href="/contact"
+              className="group relative px-10 py-5 rounded-full bg-primary text-white font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:scale-105 active:scale-95 neon-purple"
+            >
               <span className="relative z-10">Start a Project</span>
               <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            </button>
-            <button className="px-10 py-5 rounded-full glass border-white/10 text-white font-bold hover:bg-white/5 transition-all hover:border-white/20">
+            </Link>
+            <Link 
+              href="/portfolio"
+              className="px-10 py-5 rounded-full glass border-white/10 text-white font-bold hover:bg-white/5 transition-all hover:border-white/20"
+            >
               View Work
-            </button>
+            </Link>
           </motion.div>
         </div>
       </MaxWrapper>

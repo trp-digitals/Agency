@@ -15,6 +15,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const services = [
   {
@@ -178,10 +179,13 @@ export default function ServicesPage() {
                   </div>
 
                   <div className="pt-8">
-                    <button className="px-10 py-5 rounded-full bg-primary text-white font-bold flex items-center justify-center gap-3 hover:scale-105 active:scale-95 transition-all neon-purple">
+                    <Link 
+                      href="/contact"
+                      className="px-10 py-5 rounded-full bg-primary text-white font-bold flex items-center justify-center gap-3 hover:scale-105 active:scale-95 transition-all neon-purple w-fit"
+                    >
                       Start Project
                       <ArrowRight className="w-5 h-5" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
 

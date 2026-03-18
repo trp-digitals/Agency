@@ -80,9 +80,12 @@ export default function Navbar() {
               );
             })}
           </div>
-          <button className="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-bold neon-purple hover:scale-105 active:scale-95 transition-all">
+          <Link 
+            href="/contact"
+            className="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-bold neon-purple hover:scale-105 active:scale-95 transition-all"
+          >
             Get Started
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -148,9 +151,13 @@ export default function Navbar() {
               </div>
 
               <div className="mt-auto">
-                <button className="w-full py-4 rounded-2xl bg-primary text-white font-bold neon-purple">
+                <Link 
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full py-4 rounded-2xl bg-primary text-white font-bold neon-purple text-center block"
+                >
                   Get Started
-                </button>
+                </Link>
               </div>
             </motion.div>
           </>

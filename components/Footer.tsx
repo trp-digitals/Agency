@@ -40,19 +40,19 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6 text-white">Contact</h4>
             <ul className="flex flex-col gap-4 text-foreground/50">
-              <li>hello@codecraftstudios.com</li>
-              <li>+1 (555) 000-1234</li>
-              <li>123 Digital Square</li>
-              <li>Innovation City, IC 94103</li>
+              <li>syedwameez67@gmail.com</li>
+              <li>+91 9063851105</li>
+              <li>Hyderabad</li>
+              <li>India</li>
             </ul>
           </div>
         </div>
         
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-foreground/30">
-          <p>© 2024 CodeCraftStudios. All rights reserved.</p>
+          <p>© 2026 CodeCraftStudios. All rights reserved.</p>
           <div className="flex gap-8">
-            <Link href="#" className="hover:text-foreground/60">Privacy Policy</Link>
-            <Link href="#" className="hover:text-foreground/60">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-foreground/60">Privacy Policy</Link>
+             <Link href="/terms" className="hover:text-foreground/60">Terms of Service</Link>
           </div>
         </div>
       </MaxWrapper>

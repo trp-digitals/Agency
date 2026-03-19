@@ -130,7 +130,7 @@ export default function PrivacyPage() {
               <section id="introduction" className="scroll-mt-40">
                 <h2>1. Introduction</h2>
                 <p>
-                  At CodeCraftStudios, we value your privacy and are committed to protecting your personal data. 
+                  At TRP Digitals, we value your privacy and are committed to protecting your personal data. 
                   This Privacy Policy explains how we collect, use, and safeguard your information when you visit 
                   our website and use our digital services.
                 </p>

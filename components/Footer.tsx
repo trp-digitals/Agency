@@ -1,6 +1,7 @@
 import MaxWrapper from "./ui/MaxWrapper";
-import { Github, Twitter, Linkedin, Instagram, Code2 } from "lucide-react";
+import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
 import Link from "next/link";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
@@ -8,11 +9,8 @@ export default function Footer() {
       <MaxWrapper>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-6 group">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center neon-purple">
-                <Code2 className="text-white w-5 h-5" />
-              </div>
-              <span className="text-xl font-bold tracking-tight">CodeCraftStudios</span>
+            <Link href="/" className="mb-6 block w-fit">
+              <Logo />
             </Link>
             <p className="max-w-sm text-foreground/50 leading-relaxed mb-8">
               Empowering brands through cutting-edge technology and exceptional design. 
@@ -30,10 +28,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6 text-white">Company</h4>
             <ul className="flex flex-col gap-4 text-foreground/50">
-              <li><Link href="#about" className="hover:text-primary">About Us</Link></li>
-              <li><Link href="#work" className="hover:text-primary">Our Projects</Link></li>
-              <li><Link href="#services" className="hover:text-primary">Services</Link></li>
-              <li><Link href="#" className="hover:text-primary">Careers</Link></li>
+              <li><Link href="/about" className="hover:text-primary">About Us</Link></li>
+              <li><Link href="/portfolio" className="hover:text-primary">Our Projects</Link></li>
+              <li><Link href="/services" className="hover:text-primary">Services</Link></li>
+              <li><Link href="/insights" className="hover:text-primary">Insights</Link></li>
             </ul>
           </div>
 
@@ -48,8 +46,8 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-foreground/30">
-          <p>© 2026 CodeCraftStudios. All rights reserved.</p>
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-foreground/40 font-medium">
+          <p>© 2026 TRP Digitals. All rights reserved.</p>
           <div className="flex gap-8">
             <Link href="/privacy" className="hover:text-foreground/60">Privacy Policy</Link>
              <Link href="/terms" className="hover:text-foreground/60">Terms of Service</Link>

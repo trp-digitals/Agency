@@ -10,7 +10,7 @@ const testimonials = [
   {
     name: "Alex Thompson",
     role: "CEO, TechFlow",
-    content: "CodeCraftStudios delivered a product that exceeded our expectations. Their attention to detail and commitment to quality is unmatched in the industry.",
+    content: "TRP Digitals delivered a product that exceeded our expectations. Their attention to detail and commitment to quality is unmatched in the industry.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2340&auto=format&fit=crop",
   },
@@ -24,7 +24,7 @@ const testimonials = [
   {
     name: "Michael Roberts",
     role: "Founder, GreenSphere",
-    content: "The best investment we've made for our digital presence. CodeCraftStudios doesn't just build websites; they craft digital experiences that convert.",
+    content: "The best investment we've made for our digital presence. TRP Digitals doesn't just build websites; they craft digital experiences that convert.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2340&auto=format&fit=crop",
   },

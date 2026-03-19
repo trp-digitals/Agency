@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "CodeCraftStudios | Modern Digital Experience",
-  description: "A responsive, modern, luxurious dark-themed website for CodeCraftStudios.",
+  title: "TRP Digitals | Modern Digital Experience",
+  description: "A responsive, modern, luxurious dark-themed website for TRP Digitals.",
 };
 
 export default function RootLayout({

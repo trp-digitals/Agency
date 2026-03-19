@@ -8,6 +8,8 @@ import MaxWrapper from "./ui/MaxWrapper";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
+import Logo from "./Logo";
+
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
@@ -38,13 +40,8 @@ export default function Navbar() {
       )}
     >
       <MaxWrapper className="flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center neon-purple group-hover:rotate-12 transition-transform duration-300">
-            <Code2 className="text-white w-6 h-6" />
-          </div>
-          <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-            CodeCraft<span className="text-primary">Studios</span>
-          </span>
+        <Link href="/">
+          <Logo />
         </Link>
 
         {/* Desktop Links */}

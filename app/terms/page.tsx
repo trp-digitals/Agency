@@ -132,7 +132,7 @@ export default function TermsPage() {
               <section id="introduction" className="scroll-mt-40">
                 <h2>1. Introduction</h2>
                 <p>
-                  Welcome to CodeCraftStudios. These Terms of Service ("Terms") govern your access to and use of 
+                  Welcome to TRP Digitals. These Terms of Service ("Terms") govern your access to and use of 
                   our website and services. By accessing or using our services, you agree to be bound by these 
                   Terms and our Privacy Policy.
                 </p>
@@ -146,7 +146,7 @@ export default function TermsPage() {
               <section id="services" className="scroll-mt-40">
                 <h2>2. Services Offered</h2>
                 <p>
-                  CodeCraftStudios provides premium digital solutions, including but not limited to:
+                  TRP Digitals provides premium digital solutions, including but not limited to:
                 </p>
                 <ul>
                   <li>Custom Web Development</li>
@@ -186,7 +186,7 @@ export default function TermsPage() {
               <section id="intellectual-property" className="scroll-mt-40">
                 <h2>5. Intellectual Property Rights</h2>
                 <p>
-                  All custom code, designs, and digital assets created by CodeCraftStudios specifically for a 
+                  All custom code, designs, and digital assets created by TRP Digitals specifically for a 
                   client remain our property until full payment is received. Upon final payment, full 
                   ownership and usage rights are transferred to the client, unless otherwise agreed upon 
                   in writing.
@@ -200,7 +200,7 @@ export default function TermsPage() {
               <section id="liability" className="scroll-mt-40">
                 <h2>6. Limitation of Liability</h2>
                 <p>
-                  CodeCraftStudios shall not be liable for any indirect, incidental, special, or consequential 
+                  TRP Digitals shall not be liable for any indirect, incidental, special, or consequential 
                   damages resulting from the use or inability to use our services, even if we have been 
                   advised of the possibility of such damages.
                 </p>

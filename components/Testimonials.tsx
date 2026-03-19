@@ -12,21 +12,18 @@ const testimonials = [
     role: "CEO, TechFlow",
     content: "TRP Digitals delivered a product that exceeded our expectations. Their attention to detail and commitment to quality is unmatched in the industry.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2340&auto=format&fit=crop",
   },
   {
     name: "Sarah Chen",
     role: "Product Manager, InnovateApp",
     content: "Working with them was a seamless experience. The smooth animations and premium feel they brought to our platform really set us apart from competitors.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2340&auto=format&fit=crop",
   },
   {
     name: "Michael Roberts",
     role: "Founder, GreenSphere",
     content: "The best investment we've made for our digital presence. TRP Digitals doesn't just build websites; they craft digital experiences that convert.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2340&auto=format&fit=crop",
   },
 ];
 
@@ -110,30 +107,20 @@ export default function Testimonials() {
               <div className="glass p-10 md:p-16 rounded-[3rem] border-white/5 relative overflow-hidden group">
                 <Quote className="absolute top-8 right-8 w-24 h-24 text-white/5 -rotate-12 group-hover:rotate-0 transition-transform duration-700" />
                 
-                <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
-                  <div className="w-24 h-24 rounded-2xl overflow-hidden glass border-white/10 flex-shrink-0 relative">
-                    <img 
-                      src={testimonials[index].image} 
-                      alt={testimonials[index].name}
-                      className="w-full h-full object-cover"
-                    />
+                <div className="flex flex-col items-center text-center relative z-10">
+                  <div className="flex justify-center gap-1 mb-6">
+                    {[...Array(testimonials[index].rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    ))}
                   </div>
                   
-                  <div className="flex-1 text-center md:text-left">
-                    <div className="flex justify-center md:justify-start gap-1 mb-4">
-                      {[...Array(testimonials[index].rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                      ))}
-                    </div>
-                    
-                    <p className="text-xl md:text-2xl font-medium text-white/90 leading-relaxed mb-8 italic">
-                      "{testimonials[index].content}"
-                    </p>
-                    
-                    <div>
-                      <h4 className="text-xl font-bold text-white">{testimonials[index].name}</h4>
-                      <p className="text-primary text-sm font-bold tracking-widest uppercase">{testimonials[index].role}</p>
-                    </div>
+                  <p className="text-xl md:text-3xl font-medium text-white/90 leading-relaxed mb-10 italic max-w-3xl">
+                    "{testimonials[index].content}"
+                  </p>
+                  
+                  <div>
+                    <h4 className="text-2xl font-bold text-white mb-1">{testimonials[index].name}</h4>
+                    <p className="text-primary text-sm font-bold tracking-widest uppercase">{testimonials[index].role}</p>
                   </div>
                 </div>
               </div>

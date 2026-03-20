@@ -11,7 +11,7 @@ const testimonials = [
     name: "Alex Thompson",
     role: "CEO, TechFlow",
     content: "TRP Digitals delivered a product that exceeded our expectations. Their attention to detail and commitment to quality is unmatched in the industry.",
-    rating: 5,
+    rating: 4,
   },
   {
     name: "Sarah Chen",

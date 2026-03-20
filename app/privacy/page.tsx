@@ -214,7 +214,7 @@ export default function PrivacyPage() {
                 </p>
                 <div className="glass p-8 rounded-3xl border-white/5 not-prose">
                   <p className="text-white font-bold mb-2">Email</p>
-                  <p className="text-primary text-xl font-bold mb-6">syedwameez67@gmail.com</p>
+                  <p className="text-primary text-xl font-bold mb-6">trpdigitals.dev@gmail.com</p>
                   <p className="text-white font-bold mb-2">Address</p>
                   <p className="text-foreground/60 text-lg">Hyderabad, Telangana, India</p>
                 </div>

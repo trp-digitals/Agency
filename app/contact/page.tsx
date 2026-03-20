@@ -32,8 +32,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       label: "Email",
-      value: "syedwameez67@gmail.com",
-      link: "mailto:syedwameez67@gmail.com",
+      value: "trpdigitals.dev@gmail.com",
+      link: "mailto:trpdigitals.dev@gmail.com",
       color: "text-blue-500",
       bg: "bg-blue-500/10",
     },

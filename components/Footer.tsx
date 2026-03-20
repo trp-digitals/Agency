@@ -38,7 +38,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6 text-white">Contact</h4>
             <ul className="flex flex-col gap-4 text-foreground/50">
-              <li>syedwameez67@gmail.com</li>
+              <li>trpdigitals.dev@gmail.com</li>
               <li>+91 9063851105</li>
               <li>Hyderabad</li>
               <li>India</li>

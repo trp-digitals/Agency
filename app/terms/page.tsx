@@ -246,7 +246,7 @@ export default function TermsPage() {
                       <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                     <a 
-                      href="mailto:syedwameez67@gmail.com"
+                      href="mailto:trpdigitals.dev@gmail.com"
                       className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl glass border-white/10 text-white font-bold hover:bg-white/10 transition-all"
                     >
                       <Mail className="w-5 h-5" />

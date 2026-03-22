@@ -11,18 +11,18 @@ const categories = ["All", "Web", "Mobile", "Design"];
 
 const projects = [
   {
-    title: "E-Commerce Revolution",
+    title: "Resort Website",
     category: "Web",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-    tech: ["Next.js", "Tailwind", "Stripe"],
-    link: "#",
+    image: "/portfolio/image 1.png",
+    tech: ["Next.js", "Tailwind", "Typescript"],
+    link: "https://talav-resort.vercel.app/",
   },
   {
-    title: "EcoTrack AI",
-    category: "Design",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop",
-    tech: ["Figma", "Adobe XD", "UI/UX"],
-    link: "#",
+    title: "United Sign Ads",
+    category: "Web",
+    image: "/portfolio/image 2.png",
+    tech: ["NextJs", "Typescript", "Tailwind"],
+    link: "https://united-sign-ads.vercel.app/",
   },
   {
     title: "Nova Fintech",
@@ -124,18 +124,25 @@ export default function Portfolio() {
                 transition={{ duration: 0.5 }}
                 className="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden glass border-white/5"
               >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2 opacity-50 group-hover:opacity-80"
-                />
+                <a 
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full h-full"
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2 opacity-50 group-hover:opacity-80"
+                  />
+                </a>
                 
                 {/* Information Overlay */}
-                <div className="absolute inset-x-6 bottom-6 p-8 rounded-[2rem] glass border-white/10 backdrop-blur-2xl translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+                <div className="absolute inset-x-6 bottom-6 p-8 rounded-[2rem] glass border-white/10 backdrop-blur-2xl translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
                   
-                  <div className="relative z-10">
+                  <div className="relative z-20">
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tech.map((t) => (
                         <span key={t} className="px-3 py-1 rounded-full bg-white/5 text-[10px] font-bold text-primary uppercase tracking-tighter">
@@ -148,10 +155,15 @@ export default function Portfolio() {
                       {project.title}
                     </h3>
                     
-                    <button className="w-full py-4 rounded-2xl bg-white text-black font-black flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all group/btn">
+                    <a 
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-4 rounded-2xl bg-white text-black font-black flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all group/btn pointer-events-auto cursor-pointer"
+                    >
                       View Project
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
+                    </a>
                   </div>
                 </div>
 

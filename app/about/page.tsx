@@ -183,8 +183,8 @@ export default function AboutPage() {
                 <div className="mt-8 flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/20" />
                   <div>
-                    <p className="font-bold text-white">James Sterling</p>
-                    <p className="text-sm text-foreground/40">CEO, LXR Capital</p>
+                    <p className="font-bold text-white">Client</p>
+                    <p className="text-sm text-foreground/40">USA</p>
                   </div>
                 </div>
               </div>

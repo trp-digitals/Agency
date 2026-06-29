@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MaxWrapper from "./ui/MaxWrapper";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -25,32 +25,25 @@ const projects = [
     link: "https://united-sign-ads.vercel.app/",
   },
   {
-    title: "Nova Fintech",
-    category: "Mobile",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2340&auto=format&fit=crop",
-    tech: ["React Native", "Firebase"],
-    link: "#",
-  },
-  {
-    title: "Skyline Realty",
+    title: "Medi-Meet",
     category: "Web",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2340&auto=format&fit=crop",
+    image: "/portfolio/image 3.png",
+    tech: ["Javascript", "Next.js", "Tailwind"],
+    link: "https://medi-meet-blue.vercel.app/",
+  },
+  {
+    title: "Pixxel",
+    category: "Web",
+    image: "/portfolio/image 4.jpeg",
     tech: ["React", "Node.js", "PostgreSQL"],
-    link: "#",
+    link: "https://pixxel-one.vercel.app/",
   },
   {
-    title: "Nexus Dashboard",
-    category: "Design",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2340&auto=format&fit=crop",
-    tech: ["Figma", "Prototyping"],
-    link: "#",
-  },
-  {
-    title: "Aura Meditation",
-    category: "Mobile",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop",
-    tech: ["Flutter", "Dart"],
-    link: "#",
+    title: "Vehiql",
+    category: "Web",
+    image: "/portfolio/image 5.png",
+    tech: ["React", "Next.js", "Typescript"],
+    link: "https://vehiql-car.vercel.app/",
   },
 ];
 
@@ -62,9 +55,9 @@ export default function Portfolio() {
   );
 
   return (
-    <section id="work" className="py-32 relative overflow-hidden bg-[#0a0a0a]">
+    <section id="work" className="py-32 relative overflow-hidden bg-background">
       {/* Background glow */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -z-10" />
+      <div className="absolute bottom-0 right-0 w-125 h-125 bg-primary/5 blur-[120px] rounded-full -z-10" />
 
       <MaxWrapper>
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
@@ -122,7 +115,7 @@ export default function Portfolio() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden glass border-white/5"
+                className="group relative aspect-4/5 rounded-[2.5rem] overflow-hidden glass border-white/5"
               >
                 <a 
                   href={project.link}
@@ -139,8 +132,8 @@ export default function Portfolio() {
                 </a>
                 
                 {/* Information Overlay */}
-                <div className="absolute inset-x-6 bottom-6 p-8 rounded-[2rem] glass border-white/10 backdrop-blur-2xl translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
+                <div className="absolute inset-x-6 bottom-6 p-8 rounded-4xl glass border-white/10 backdrop-blur-2xl translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-transparent" />
                   
                   <div className="relative z-20">
                     <div className="flex flex-wrap gap-2 mb-4">

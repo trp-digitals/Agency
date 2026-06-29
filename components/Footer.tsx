@@ -1,5 +1,5 @@
 import MaxWrapper from "./ui/MaxWrapper";
-import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import Logo from "./Logo";
 
@@ -17,11 +17,12 @@ export default function Footer() {
               Let's create something extraordinary together.
             </p>
             <div className="flex gap-4">
-              {[Github, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                <button key={i} className="w-10 h-10 rounded-full glass flex items-center justify-center hover:scale-110 hover:text-primary transition-all">
-                  <Icon className="w-5 h-5" />
-                </button>
-              ))}
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:scale-110 hover:text-primary transition-all">
+                <FaLinkedinIn size={18} />
+              </a>
+              <a href="https://www.instagram.com/trp.digitals" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:scale-110 hover:text-primary transition-all">
+                <FaInstagram size={18} />
+              </a>
             </div>
           </div>
 
@@ -31,7 +32,6 @@ export default function Footer() {
               <li><Link href="/about" className="hover:text-primary">About Us</Link></li>
               <li><Link href="/portfolio" className="hover:text-primary">Our Projects</Link></li>
               <li><Link href="/services" className="hover:text-primary">Services</Link></li>
-              <li><Link href="/insights" className="hover:text-primary">Insights</Link></li>
             </ul>
           </div>
 

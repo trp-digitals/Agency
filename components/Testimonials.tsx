@@ -8,20 +8,20 @@ import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
-    name: "Alex Thompson",
-    role: "CEO, TechFlow",
+    name: "Client 1",
+    role: "Maharashtra",
     content: "TRP Digitals delivered a product that exceeded our expectations. Their attention to detail and commitment to quality is unmatched in the industry.",
     rating: 4,
   },
   {
-    name: "Sarah Chen",
-    role: "Product Manager, InnovateApp",
+    name: "Client 2",
+    role: "UK",
     content: "Working with them was a seamless experience. The smooth animations and premium feel they brought to our platform really set us apart from competitors.",
     rating: 5,
   },
   {
-    name: "Michael Roberts",
-    role: "Founder, GreenSphere",
+    name: "Client 3",
+    role: "Australia",
     content: "The best investment we've made for our digital presence. TRP Digitals doesn't just build websites; they craft digital experiences that convert.",
     rating: 5,
   },

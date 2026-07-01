@@ -25,25 +25,11 @@ const projects = [
     link: "https://united-sign-ads.vercel.app/",
   },
   {
-    title: "Medi-Meet",
-    category: "Web",
+    title: "Real-estate App",
+    category: "App",
     image: "/portfolio/image 3.png",
-    tech: ["Javascript", "Next.js", "Tailwind"],
-    link: "https://medi-meet-blue.vercel.app/",
-  },
-  {
-    title: "Pixxel",
-    category: "Web",
-    image: "/portfolio/image 4.jpeg",
-    tech: ["React", "Node.js", "PostgreSQL"],
-    link: "https://pixxel-one.vercel.app/",
-  },
-  {
-    title: "Vehiql",
-    category: "Web",
-    image: "/portfolio/image 5.png",
-    tech: ["React", "Next.js", "Typescript"],
-    link: "https://vehiql-car.vercel.app/",
+    tech: ["React-native", "Typescript", "Redis"],
+    link: "#",
   },
 ];
 

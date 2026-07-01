@@ -26,7 +26,7 @@ const projects = [
   },
   {
     title: "Real-estate App",
-    category: "App",
+    category: "Mobile",
     image: "/portfolio/image 3.png",
     tech: ["React-native", "Typescript", "Redis"],
     link: "#",

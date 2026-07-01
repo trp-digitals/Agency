@@ -1,5 +1,5 @@
 import MaxWrapper from "./ui/MaxWrapper";
-import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 import Logo from "./Logo";
 
@@ -17,11 +17,14 @@ export default function Footer() {
               Let's create something extraordinary together.
             </p>
             <div className="flex gap-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:scale-110 hover:text-primary transition-all">
+              <a href="https://www.linkedin.com/company/trp-digitals" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:scale-110 hover:text-primary transition-all">
                 <FaLinkedinIn size={18} />
               </a>
               <a href="https://www.instagram.com/trp.digitals" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:scale-110 hover:text-primary transition-all">
                 <FaInstagram size={18} />
+              </a>
+              <a href="mailto:trpdigitals.dev@gmail.com" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:scale-110 hover:text-primary transition-all">
+                <FaEnvelope size={18} />
               </a>
             </div>
           </div>
@@ -38,7 +41,12 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6 text-white">Contact</h4>
             <ul className="flex flex-col gap-4 text-foreground/50">
-              <li>trpdigitals.dev@gmail.com</li>
+              <li className="flex items-center gap-2">
+                <FaEnvelope className="text-primary flex-shrink-0" size={16} />
+                <a href="mailto:trpdigitals.dev@gmail.com" className="hover:text-primary transition-colors">
+                  trpdigitals.dev@gmail.com
+                </a>
+              </li>
               <li>+91 9063851105</li>
               <li>Hyderabad</li>
               <li>India</li>

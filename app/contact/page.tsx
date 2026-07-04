@@ -74,12 +74,12 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen relative overflow-hidden bg-[#0a0a0a]">
+    <main className="min-h-screen relative overflow-hidden bg-background">
       <Navbar />
       
       {/* Background glow effects */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[150px] rounded-full -z-10 animate-pulse" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 blur-[150px] rounded-full -z-10" />
+      <div className="absolute top-0 right-0 w-125 h-125 bg-primary/10 blur-[150px] rounded-full -z-10 animate-pulse" />
+      <div className="absolute bottom-0 left-0 w-125 h-125 bg-blue-500/5 blur-[150px] rounded-full -z-10" />
 
       <MaxWrapper className="pt-40 pb-32">
         <AnimatePresence mode="wait">
@@ -148,7 +148,7 @@ export default function ContactPage() {
                             placeholder="John Doe"
                           />
                           {focused === "name" && (
-                            <motion.div layoutId="focus-glow" className="absolute inset-[-2px] rounded-2xl border-2 border-primary/30 blur-[2px] pointer-events-none" />
+                            <motion.div layoutId="focus-glow" className="absolute inset-0.5 rounded-2xl border-2 border-primary/30 blur-[2px] pointer-events-none" />
                           )}
                         </div>
                       </div>
@@ -166,7 +166,7 @@ export default function ContactPage() {
                             placeholder="john@example.com"
                           />
                           {focused === "email" && (
-                            <motion.div layoutId="focus-glow" className="absolute inset-[-2px] rounded-2xl border-2 border-primary/30 blur-[2px] pointer-events-none" />
+                            <motion.div layoutId="focus-glow" className="absolute inset-0.5 rounded-2xl border-2 border-primary/30 blur-[2px] pointer-events-none" />
                           )}
                         </div>
                       </div>
@@ -182,13 +182,13 @@ export default function ContactPage() {
                           onBlur={() => setFocused(null)}
                           className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary/50 transition-all appearance-none cursor-pointer"
                         >
-                          <option className="bg-[#0a0a0a]">Web Development</option>
-                          <option className="bg-[#0a0a0a]">UI/UX Design</option>
-                          <option className="bg-[#0a0a0a]">Mobile App</option>
-                          <option className="bg-[#0a0a0a]">Other</option>
+                          <option className="bg-background">Web Development</option>
+                          <option className="bg-background">UI/UX Design</option>
+                          <option className="bg-background">Mobile App</option>
+                          <option className="bg-background">Other</option>
                         </select>
                         {focused === "project" && (
-                          <motion.div layoutId="focus-glow" className="absolute inset-[-2px] rounded-2xl border-2 border-primary/30 blur-[2px] pointer-events-none" />
+                          <motion.div layoutId="focus-glow" className="absolute inset-0.5 rounded-2xl border-2 border-primary/30 blur-[2px] pointer-events-none" />
                         )}
                       </div>
                     </div>
@@ -207,14 +207,14 @@ export default function ContactPage() {
                           placeholder="Tell us about your project goals..."
                         />
                         {focused === "message" && (
-                          <motion.div layoutId="focus-glow" className="absolute inset-[-2px] rounded-2xl border-2 border-primary/30 blur-[2px] pointer-events-none" />
+                          <motion.div layoutId="focus-glow" className="absolute inset-0.5 rounded-2xl border-2 border-primary/30 blur-[2px] pointer-events-none" />
                         )}
                       </div>
                     </div>
 
                     <button 
                       disabled={isSubmitting}
-                      className="w-full py-5 min-h-[56px] rounded-2xl bg-white text-[#0a0a0a] font-black text-lg flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:shadow-[0_0_40px_rgba(192,132,252,0.5)] transition-all duration-300 group active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full py-5 min-h-14 rounded-2xl bg-white text-background font-black text-lg flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:shadow-[0_0_40px_rgba(192,132,252,0.5)] transition-all duration-300 group active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? (
                         <>
@@ -240,7 +240,7 @@ export default function ContactPage() {
               className="max-w-xl mx-auto text-center"
             >
               <div className="glass p-16 rounded-[4rem] border-white/10 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-transparent" />
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}

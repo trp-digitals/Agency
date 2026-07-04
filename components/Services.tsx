@@ -46,9 +46,9 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 relative overflow-hidden bg-[#0a0a0a]">
+    <section id="services" className="py-32 relative overflow-hidden bg-background">
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -z-10" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-125 h-125 bg-primary/5 blur-[120px] rounded-full -z-10" />
 
       <MaxWrapper>
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
@@ -97,18 +97,18 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group relative p-10 rounded-[2.5rem] glass border-white/5 hover:border-primary/20 transition-all overflow-hidden"
+              className="group relative p-6 md:p-10 rounded-[2.5rem] glass border-white/5 hover:border-primary/20 transition-all overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               
-              <div className={cn("w-16 h-16 rounded-2xl flex items-center justify-center mb-8 relative z-10 transition-transform group-hover:scale-110", service.bg)}>
-                <service.icon className={cn("w-8 h-8", service.color)} />
+              <div className={cn("w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-6 md:mb-8 relative z-10 transition-transform group-hover:scale-110", service.bg)}>
+                <service.icon className={cn("w-6 h-6 md:w-8 md:h-8", service.color)} />
               </div>
 
-              <h3 className="text-2xl font-bold mb-4 relative z-10 group-hover:text-primary transition-colors">
+              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 relative z-10 group-hover:text-primary transition-colors">
                 {service.title}
               </h3>
-              <p className="text-foreground/50 leading-relaxed text-lg relative z-10">
+              <p className="text-foreground/65 leading-relaxed text-base md:text-lg relative z-10">
                 {service.description}
               </p>
 

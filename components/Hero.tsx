@@ -2,10 +2,16 @@
 
 import { motion } from "framer-motion";
 import MaxWrapper from "./ui/MaxWrapper";
-import { ArrowRight, Sparkles, Code2, Globe, Cpu } from "lucide-react";
+import { ArrowRight, Sparkles, Code2, Globe, Cpu, ChevronDown, ShieldCheck } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-const FloatingCard = ({ icon: Icon, title, delay, className }: any) => (
+const FloatingCard = ({ icon: Icon, title, delay, className }: {
+  icon: React.ElementType;
+  title: string;
+  delay: number;
+  className?: string;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -26,13 +32,14 @@ const FloatingCard = ({ icon: Icon, title, delay, className }: any) => (
   </motion.div>
 );
 
-import { cn } from "@/lib/utils";
-
 export default function Hero() {
   const words = "We Craft Digital Experiences That Convert".split(" ");
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#0a0a0a]">
+    <section
+      className="relative min-h-screen flex items-center justify-center pt-20 pb-32 overflow-hidden bg-background"
+      aria-label="Hero section"
+    >
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 grid-background grid-mask opacity-30" />
@@ -42,12 +49,14 @@ export default function Hero() {
             opacity: [0.3, 0.5, 0.3]
           }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 blur-[120px] rounded-full"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-primary/20 blur-[120px] rounded-full"
         />
       </div>
 
       <MaxWrapper className="relative z-10">
         <div className="flex flex-col items-center text-center">
+
+          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -59,7 +68,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Headline with Text Reveal */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-8 leading-[1.1]">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6 leading-[1.1]">
             {words.map((word, i) => (
               <motion.span
                 key={i}
@@ -76,35 +85,55 @@ export default function Hero() {
             ))}
           </h1>
 
+          {/* Subtitle — improved contrast & line height */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="max-w-2xl text-lg md:text-xl text-foreground/50 mb-12 font-medium tracking-wide"
+            className="max-w-2xl text-lg md:text-xl text-white/70 mb-10 font-medium leading-loose tracking-wide"
           >
-            Full-stack development | Premium UI/UX | Scalable solutions
+            We build high-converting websites, mobile apps &amp; SaaS products that
+            grow your business — from concept to launch in weeks, not months.
           </motion.p>
 
+          {/* CTAs — clear visual hierarchy */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.2 }}
-            className="flex flex-col sm:flex-row gap-6"
+            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
-            <Link 
+            {/* PRIMARY CTA — white bg, maximum contrast (21:1) */}
+            <Link
               href="/contact"
-              className="group relative px-10 py-5 rounded-full bg-primary text-white font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:scale-105 active:scale-95 neon-purple"
+              id="hero-cta-primary"
+              className="group relative px-10 py-4 min-h-14 rounded-full bg-white text-background font-black text-base flex items-center justify-center gap-3 overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(192,132,252,0.3)] hover:shadow-[0_0_60px_rgba(192,132,252,0.5)] w-full sm:w-auto"
             >
-              <span className="relative z-10">Start a Project</span>
-              <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              {/* Sliding bg on hover */}
+              <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-full" />
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300">Start a Project</span>
+              <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:text-white transition-all duration-300" />
             </Link>
-            <Link 
+
+            {/* SECONDARY CTA — clearly subordinate, ghost style */}
+            <Link
               href="/portfolio"
-              className="px-10 py-5 rounded-full glass border-white/10 text-white font-bold hover:bg-white/5 transition-all hover:border-white/20"
+              id="hero-cta-secondary"
+              className="px-8 py-4 min-h-14 rounded-full glass border border-white/20 text-white/80 font-bold hover:bg-white/5 hover:border-white/40 hover:text-white transition-all flex items-center justify-center w-full sm:w-auto text-sm"
             >
-              View Work
+              View Our Work
             </Link>
+          </motion.div>
+
+          {/* Trust signal */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.6 }}
+            className="flex items-center gap-2 mt-6 text-white/40 text-sm font-medium"
+          >
+            <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
+            <span>Free consultation &middot; No commitment &middot; 100% satisfaction guarantee</span>
           </motion.div>
         </div>
       </MaxWrapper>
@@ -137,13 +166,22 @@ export default function Hero() {
         />
       </div>
 
-      {/* Floating Animation Global Style */}
-      <style jsx global>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(2deg); }
-        }
-      `}</style>
+      {/* Scroll indicator — sits at very bottom, never overlaps content */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 0.8 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 pointer-events-none"
+      >
+        <span className="text-white/30 text-[10px] font-medium tracking-[0.2em] uppercase">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+        >
+          <ChevronDown className="w-4 h-4 text-white/30" />
+        </motion.div>
+      </motion.div>
+
     </section>
   );
 }

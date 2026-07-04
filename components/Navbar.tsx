@@ -11,9 +11,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 
 const navLinks = [
-  { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
+  { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -35,7 +35,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled 
-          ? "bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl" 
+          ? "bg-background/80 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl" 
           : "bg-transparent py-6"
       )}
     >
@@ -85,12 +85,15 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle — 48px touch target (WCAG 2.5.5) */}
         <button
-          className="md:hidden w-10 h-10 flex items-center justify-center text-foreground hover:bg-white/5 rounded-lg transition-colors"
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          className="md:hidden touch-target w-12 h-12 flex items-center justify-center text-foreground hover:bg-white/5 rounded-xl transition-colors"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </MaxWrapper>
 
@@ -106,11 +109,12 @@ export default function Navbar() {
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[-1] md:hidden"
             />
             <motion.div
+              id="mobile-menu"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-[300px] bg-[#0a0a0a] border-l border-white/10 z-50 md:hidden flex flex-col p-8"
+              className="fixed top-0 right-0 bottom-0 w-75 bg-background border-l border-white/10 z-50 md:hidden flex flex-col p-8"
             >
               <div className="flex justify-between items-center mb-12">
                 <span className="text-xl font-bold italic">Menu</span>
@@ -122,7 +126,7 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-2">
                 {navLinks.map((link, idx) => {
                   const isActive = pathname === link.href;
                   return (
@@ -135,8 +139,8 @@ export default function Navbar() {
                       <Link
                         href={link.href}
                         className={cn(
-                          "text-2xl font-semibold transition-colors",
-                          isActive ? "text-primary ml-2" : "text-foreground/50 hover:text-white"
+                          "flex items-center min-h-13 px-3 rounded-xl text-2xl font-semibold transition-colors",
+                          isActive ? "text-primary bg-primary/5" : "text-foreground/60 hover:text-white hover:bg-white/5"
                         )}
                         onClick={() => setIsOpen(false)}
                       >
@@ -151,9 +155,9 @@ export default function Navbar() {
                 <Link 
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full py-4 rounded-2xl bg-primary text-white font-bold neon-purple text-center block"
+                  className="w-full py-5 min-h-14 rounded-2xl bg-white text-background font-black text-center flex items-center justify-center shadow-[0_0_30px_rgba(192,132,252,0.3)] hover:bg-primary hover:text-white transition-all"
                 >
-                  Get Started
+                  Get Started — Free Consult
                 </Link>
               </div>
             </motion.div>

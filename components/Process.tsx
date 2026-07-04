@@ -47,9 +47,9 @@ export default function Process() {
   const pathLength = useTransform(scrollYProgress, [0.2, 0.8], [0, 1]);
 
   return (
-    <section ref={containerRef} id="process" className="py-32 relative overflow-hidden bg-[#0a0a0a]">
+    <section ref={containerRef} id="process" className="py-32 relative overflow-hidden bg-background">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/5 blur-[120px] rounded-full -z-10" />
+      <div className="absolute top-0 right-0 w-100 h-100 bg-primary/5 blur-[120px] rounded-full -z-10" />
 
       <MaxWrapper>
         <div className="text-center mb-24">
@@ -74,10 +74,10 @@ export default function Process() {
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute top-[60px] left-0 w-full h-[2px] bg-white/5 hidden lg:block">
+          <div className="absolute top-15 left-0 w-full h-0.5 bg-white/5 hidden lg:block">
             <motion.div
               style={{ scaleX: pathLength, originX: 0 }}
-              className="h-full bg-gradient-to-r from-blue-500 via-primary to-orange-500"
+              className="h-full bg-linear-to-r from-blue-500 via-primary to-orange-500"
             />
           </div>
 
@@ -92,23 +92,23 @@ export default function Process() {
                 className="relative group"
               >
                 {/* Step Number Badge */}
-                <div className="hidden lg:flex absolute -top-[20px] left-1/2 -translate-x-1/2 w-10 h-10 rounded-full glass border-white/10 items-center justify-center text-xs font-black text-white z-20">
+                <div className="hidden lg:flex absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full glass border-white/10 items-center justify-center text-xs font-black text-white z-20">
                   0{index + 1}
                 </div>
 
                 {/* Card Container */}
-                <div className="relative p-10 rounded-[2.5rem] glass border-white/5 hover:border-primary/20 transition-all text-center group-hover:bg-white/5">
-                  <div className="inline-flex w-20 h-20 rounded-2xl items-center justify-center mb-8 relative transition-transform group-hover:scale-110">
+                <div className="relative p-6 md:p-10 rounded-[2.5rem] glass border-white/5 hover:border-primary/20 transition-all text-center group-hover:bg-white/5">
+                  <div className="inline-flex w-14 h-14 md:w-20 md:h-20 rounded-2xl items-center justify-center mb-6 md:mb-8 relative transition-transform group-hover:scale-110">
                     <div className={cn("absolute inset-0 blur-xl opacity-20", step.bg)} />
                     <div className={cn("relative z-10 w-full h-full rounded-2xl flex items-center justify-center", step.bg)}>
                       <step.icon className={cn("w-10 h-10", step.color)} />
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-primary transition-colors">
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white group-hover:text-primary transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-foreground/50 leading-relaxed text-sm">
+                  <p className="text-white/65 leading-relaxed text-sm">
                     {step.description}
                   </p>
                 </div>

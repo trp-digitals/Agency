@@ -1,17 +1,18 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import { defaultMetadata, defaultViewport, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
-export const metadata: Metadata = {
-  title: "TRP Digitals | Modern Digital Experience",
-  description: "A responsive, modern, luxurious dark-themed website for TRP Digitals.",
-};
+export const metadata: Metadata = defaultMetadata;
+export const viewport: Viewport = defaultViewport;
 
 export default function RootLayout({
   children,
@@ -19,11 +20,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
+        {/* Organization JSON-LD */}
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        {/* WebSite JSON-LD */}
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
+          }}
+        />
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

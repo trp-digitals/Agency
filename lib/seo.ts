@@ -139,7 +139,7 @@ export const defaultMetadata: Metadata = {
   // ── Verification ─────────────────────────────────────────────────────────────
   // TODO: Replace with your actual verification codes from each platform
   verification: {
-    google: "REPLACE_WITH_SEARCH_CONSOLE_CODE",
+    google: "VEeY_ajw5G2m4zOCEkpqIOCk3TH4lZz7KTuelbCctKc",
     other: {
       "msvalidate.01": "REPLACE_WITH_BING_VERIFICATION",
     },

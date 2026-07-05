@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const siteUrl = "https://trp-digitals.vercel.app/";
+export const siteUrl = "https://trp-digitals.vercel.app";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Site Configuration

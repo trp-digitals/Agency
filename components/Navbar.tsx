@@ -81,13 +81,14 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-10">
-            <div className="flex items-center gap-8 px-6 py-2 rounded-full glass border-white/5">
+            <nav aria-label="Main Navigation" className="flex items-center gap-8 px-6 py-2 rounded-full glass border-white/5">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.name}
                     href={link.href}
+                    title={`${link.name} — TRP Digitals`}
                     className={cn(
                       "relative text-sm font-medium transition-colors hover:text-white",
                       isActive ? "text-white" : "text-foreground/50"
@@ -104,7 +105,7 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-            </div>
+            </nav>
             <Link
               href="/contact"
               className="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-bold neon-purple hover:scale-105 active:scale-95 transition-all"

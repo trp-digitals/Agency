@@ -163,7 +163,7 @@ export default async function Image() {
             letterSpacing: "2px",
           }}
         >
-          trpdigitals.com
+          trp-digitals.vercel.app
         </div>
       </div>
     ),

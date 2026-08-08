@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from "next";
 
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const siteUrl = "https://trp-digitals.vercel.app";
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://trp-digitals.vercel.app";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Site Configuration
@@ -10,35 +11,39 @@ export const siteUrl = "https://trp-digitals.vercel.app";
 export const siteConfig = {
   name: "TRP Digitals",
   shortName: "TRP",
-  tagline: "Premium Digital Agency",
+  tagline: "Digital Solutions Agency",
   description:
-    "TRP Digitals is a premium digital agency based in Hyderabad, India. We craft high-performance websites, mobile apps, and full-stack software solutions that help businesses grow in the digital world.",
+    "TRP Digitals is a digital solutions agency based in Hyderabad, India. We build high-performance websites, mobile apps, SaaS platforms, e-commerce stores, and AI automation for growing businesses.",
   url: siteUrl,
   ogImage: `${siteUrl}/opengraph-image`,
   logo: `${siteUrl}/logo.png`,
 
   keywords: [
     "TRP Digitals",
-    "digital agency Hyderabad",
-    "web development agency India",
-    "custom website development",
+    "web development agency Hyderabad",
+    "website development company Hyderabad",
+    "mobile app development company",
+    "SaaS development agency",
+    "e-commerce development",
+    "AI automation agency",
     "UI UX design agency",
-    "mobile app development",
-    "full stack development",
-    "Next.js agency",
-    "React development",
-    "premium web design",
-    "software development agency",
-    "digital solutions India",
+    "digital solutions agency",
+    "Syed Wameez Ahmed",
+    "custom website development",
+    "full stack development India",
   ],
 
   author: {
-    name: "TRP Digitals",
+    name: "Syed Wameez Ahmed",
+    role: "Founder & CEO",
+    company: "TRP Digitals",
     email: "trpdigitals.dev@gmail.com",
     url: siteUrl,
   },
 
   social: {
+    linkedin: "https://www.linkedin.com/company/trp-digitals",
+    instagram: "https://www.instagram.com/trp.digitals",
     whatsapp: "https://wa.me/919063851105",
     email: "trpdigitals.dev@gmail.com",
   },
@@ -66,7 +71,7 @@ export const defaultMetadata: Metadata = {
 
   title: {
     template: `%s | ${siteConfig.name}`,
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    default: `${siteConfig.name} — Web Development, Apps & AI Solutions`,
   },
 
   description: siteConfig.description,
@@ -108,7 +113,7 @@ export const defaultMetadata: Metadata = {
     locale: siteConfig.locale,
     url: siteUrl,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.name} — Web Development, Apps & AI Solutions`,
     description: siteConfig.description,
     images: [
       {
@@ -126,7 +131,7 @@ export const defaultMetadata: Metadata = {
     card: "summary_large_image",
     site: siteConfig.twitterHandle,
     creator: siteConfig.twitterHandle,
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.name} — Web Development, Apps & AI Solutions`,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
@@ -137,7 +142,6 @@ export const defaultMetadata: Metadata = {
   },
 
   // ── Verification ─────────────────────────────────────────────────────────────
-  // TODO: Replace with your actual verification codes from each platform
   verification: {
     google: "VEeY_ajw5G2m4zOCEkpqIOCk3TH4lZz7KTuelbCctKc",
     other: {
@@ -147,7 +151,7 @@ export const defaultMetadata: Metadata = {
 
   // ── Misc ─────────────────────────────────────────────────────────────────────
   category: "technology",
-  classification: "Digital Agency",
+  classification: "Digital Solutions Agency",
   referrer: "origin-when-cross-origin",
   formatDetection: {
     email: false,
@@ -175,7 +179,6 @@ export const defaultViewport: Viewport = {
 // ─────────────────────────────────────────────────────────────────────────────
 // Page Metadata Generator
 // Merges page-specific overrides with the defaults.
-// Usage: export const metadata = generatePageMetadata({ title, description, ... })
 // ─────────────────────────────────────────────────────────────────────────────
 export function generatePageMetadata(
   overrides: {
@@ -226,7 +229,7 @@ export function generatePageMetadata(
 
     openGraph: {
       ...(defaultMetadata.openGraph as object),
-      title: `${title} | ${siteConfig.name}`,
+      title: title.includes(siteConfig.name) ? title : `${title} | ${siteConfig.name}`,
       description,
       url: canonicalUrl,
       images: [
@@ -242,7 +245,7 @@ export function generatePageMetadata(
 
     twitter: {
       ...(defaultMetadata.twitter as object),
-      title: `${title} | ${siteConfig.name}`,
+      title: title.includes(siteConfig.name) ? title : `${title} | ${siteConfig.name}`,
       description,
       images: [ogImage],
     },
@@ -253,12 +256,13 @@ export function generatePageMetadata(
 // JSON-LD Structured Data
 // ─────────────────────────────────────────────────────────────────────────────
 
-/** Organization schema — injected once in root layout */
+/** Organization & Professional Service schema — injected once in root layout */
 export const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "ProfessionalService"],
   "@id": `${siteUrl}/#organization`,
   name: siteConfig.name,
+  legalName: siteConfig.name,
   url: siteUrl,
   logo: {
     "@type": "ImageObject",
@@ -268,7 +272,16 @@ export const organizationJsonLd = {
   },
   description: siteConfig.description,
   foundingDate: "2024",
-  founders: [{ "@type": "Person", name: "TRP Digitals Team" }],
+  founders: [
+    {
+      "@type": "Person",
+      name: siteConfig.author.name,
+      jobTitle: siteConfig.author.role,
+      worksFor: {
+        "@id": `${siteUrl}/#organization`,
+      },
+    },
+  ],
   address: {
     "@type": "PostalAddress",
     addressLocality: siteConfig.location.city,
@@ -282,16 +295,33 @@ export const organizationJsonLd = {
     telephone: "+91-9063851105",
     availableLanguage: ["English", "Hindi"],
   },
-  sameAs: [siteConfig.social.whatsapp],
-  serviceArea: {
-    "@type": "Place",
-    name: "Worldwide",
-  },
+  sameAs: [
+    siteConfig.social.linkedin,
+    siteConfig.social.instagram,
+    siteConfig.social.whatsapp,
+  ],
+  serviceArea: [
+    {
+      "@type": "AdministrativeArea",
+      name: "Hyderabad",
+    },
+    {
+      "@type": "Country",
+      name: "India",
+    },
+    {
+      "@type": "Place",
+      name: "Worldwide",
+    },
+  ],
   knowsAbout: [
     "Web Development",
-    "UI/UX Design",
+    "UI/UX & Product Design",
     "Mobile App Development",
-    "Full-Stack Engineering",
+    "SaaS Platform Engineering",
+    "E-Commerce Solutions",
+    "AI & Business Automation",
+    "Digital Growth & SEO",
   ],
 };
 
@@ -369,3 +399,64 @@ export function generateFaqJsonLd(
     })),
   };
 }
+
+/** Services Catalog JSON-LD generator */
+export function generateServicesJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "TRP Digitals Core Services",
+    url: `${siteUrl}/services`,
+    itemListElement: [
+      {
+        "@type": "Service",
+        position: 1,
+        name: "Web & Digital Development",
+        description:
+          "High-performance websites and web applications designed to help businesses establish, grow, and scale their digital presence.",
+        provider: { "@id": `${siteUrl}/#organization` },
+      },
+      {
+        "@type": "Service",
+        position: 2,
+        name: "UI/UX & Product Design",
+        description:
+          "User-focused interfaces and design systems crafted to create beautiful, intuitive, and conversion-driven digital experiences.",
+        provider: { "@id": `${siteUrl}/#organization` },
+      },
+      {
+        "@type": "Service",
+        position: 3,
+        name: "Mobile App Development",
+        description:
+          "Modern Android and iOS applications built for performance, usability, and seamless user experiences.",
+        provider: { "@id": `${siteUrl}/#organization` },
+      },
+      {
+        "@type": "Service",
+        position: 4,
+        name: "SaaS & Custom Platforms",
+        description:
+          "Scalable SaaS products and custom digital platforms built around your business workflows and growth goals.",
+        provider: { "@id": `${siteUrl}/#organization` },
+      },
+      {
+        "@type": "Service",
+        position: 5,
+        name: "E-Commerce Solutions",
+        description:
+          "Conversion-focused online stores with secure payments, product management, and scalable e-commerce experiences.",
+        provider: { "@id": `${siteUrl}/#organization` },
+      },
+      {
+        "@type": "Service",
+        position: 6,
+        name: "AI & Business Automation",
+        description:
+          "Intelligent AI solutions and automated workflows that reduce manual work and help businesses operate smarter.",
+        provider: { "@id": `${siteUrl}/#organization` },
+      },
+    ],
+  };
+}
+

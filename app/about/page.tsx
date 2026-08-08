@@ -5,16 +5,16 @@ import JsonLd from "@/components/JsonLd";
 import AboutClient from "./AboutClient";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "About Us",
+  title: "About TRP Digitals | Digital Solutions Agency",
   description:
-    "Learn about TRP Digitals — a digital solutions agency helping startups, small businesses, and growing companies build high-performance websites, apps, and digital platforms.",
+    "Learn about TRP Digitals, our founder Syed Wameez Ahmed, and our mission to provide clean code, transparent pricing, and scalable digital solutions for growing companies.",
   path: "/about",
 });
 
 const webPageJsonLd = generateWebPageJsonLd({
-  title: "About Us | TRP Digitals",
+  title: "About TRP Digitals | Digital Solutions Agency",
   description:
-    "Building digital solutions that move businesses forward. Learn about our vision, mission, and core engineering principles.",
+    "Building digital solutions that move businesses forward. Learn about our vision, mission, engineering principles, and founder Syed Wameez Ahmed.",
   url: `${siteUrl}/about`,
 });
 
@@ -27,4 +27,5 @@ export default function AboutPage() {
     </>
   );
 }
+
 

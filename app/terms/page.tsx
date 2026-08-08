@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { generatePageMetadata, generateWebPageJsonLd, siteUrl } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
-import TermsClient from "./_TermsClient";
+import TermsClient from "./TermsClient";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Terms of Service",
+  title: "Terms of Service | TRP Digitals",
   description:
     "Read TRP Digitals' Terms of Service. Understand the terms governing our web development, design, and software engineering services.",
   path: "/terms",
@@ -26,3 +26,4 @@ export default function TermsPage() {
     </>
   );
 }
+

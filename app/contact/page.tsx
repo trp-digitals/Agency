@@ -8,14 +8,14 @@ import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Contact Us",
+  title: "Contact TRP Digitals | Start Your Digital Project",
   description:
-    "Get in touch with TRP Digitals. Discuss your web development, mobile app, SaaS, or AI project with our expert team.",
+    "Get in touch with TRP Digitals in Hyderabad. Schedule a free consultation to discuss your web development, mobile app, SaaS, or AI automation project.",
   path: "/contact",
 });
 
 const webPageJsonLd = generateWebPageJsonLd({
-  title: "Contact Us | TRP Digitals",
+  title: "Contact TRP Digitals | Start Your Digital Project",
   description:
     "Tell us about your project goals and let's build something extraordinary together.",
   url: `${siteUrl}/contact`,

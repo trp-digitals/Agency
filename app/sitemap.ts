@@ -36,12 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/portfolio`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
       url: `${siteUrl}/contact`,
       lastModified: now,
       changeFrequency: "monthly",
@@ -61,11 +55,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
-
-    // ── NOTE: The following paths are intentionally excluded ─────────────────────
-    // /api/*        — API routes (not pages)
-    // /dashboard/*  — Private/authenticated pages (add noindex + exclude here)
-    // /login        — Auth pages
-    // /admin/*      — Admin areas
   ];
 }

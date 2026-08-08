@@ -4,11 +4,8 @@ import MaxWrapper from "./ui/MaxWrapper";
 import { FaLinkedinIn, FaInstagram, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 import Logo from "./Logo";
-import { usePathname } from "next/navigation";
 
 export default function Footer() {
-  const pathname = usePathname();
-  if (pathname?.startsWith("/admin")) return null;
   return (
     <footer id="site-footer" className="py-20 border-t border-white/5 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-linear-to-r from-transparent via-primary/30 to-transparent" />

@@ -90,11 +90,11 @@ export default function CTABanner() {
 
               {/* Secondary */}
               <Link
-                href="/portfolio"
+                href="/services"
                 id="cta-banner-secondary"
                 className="px-8 py-4 min-h-14 rounded-full glass border border-white/20 text-white/80 font-bold hover:bg-white/5 hover:border-white/40 hover:text-white transition-all text-sm flex items-center gap-2 w-full sm:w-auto justify-center"
               >
-                See Our Work
+                Our Services
               </Link>
             </motion.div>
 

@@ -5,9 +5,6 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { defaultMetadata, defaultViewport, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
-import { Suspense } from "react";
-// Client wrapper handles dynamic(ssr:false) — cannot use ssr:false in Server Components
-import AnalyticsTrackerWrapper from "@/components/analytics/AnalyticsTrackerWrapper";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -48,10 +45,6 @@ export default function RootLayout({
           {children}
           <Footer />
         </SmoothScroll>
-        {/* Analytics tracker — zero SSR, fire-and-forget, never blocks page */}
-        <Suspense fallback={null}>
-          <AnalyticsTrackerWrapper />
-        </Suspense>
       </body>
     </html>
   );

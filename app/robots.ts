@@ -16,12 +16,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           "/api/",       // API routes — not meaningful pages
           "/_next/",     // Next.js internal static files
-          "/admin/",     // Future admin area
-          "/dashboard/", // Future authenticated dashboard
-          "/login",      // Future auth pages
-          "/register",
-          "/404",        // Error pages should not be indexed
-          "/500",
         ],
       },
     ],

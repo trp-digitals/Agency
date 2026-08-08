@@ -59,6 +59,7 @@ export default function FAQAccordion() {
         <div className="max-w-3xl mx-auto flex flex-col gap-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
+            const panelId = `faq-panel-${idx}`;
             return (
               <motion.div
                 key={idx}
@@ -69,6 +70,9 @@ export default function FAQAccordion() {
                 className="glass-card rounded-2xl border border-white/10 overflow-hidden"
               >
                 <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
                   className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-white hover:text-primary transition-colors"
                 >
@@ -79,6 +83,8 @@ export default function FAQAccordion() {
                 <AnimatePresence>
                   {isOpen && (
                     <motion.div
+                      id={panelId}
+                      role="region"
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}

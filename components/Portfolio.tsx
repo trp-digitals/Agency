@@ -13,21 +13,21 @@ const projects = [
   {
     title: "Resort Website",
     category: "Web",
-    image: "/portfolio/image 1.png",
+    image: "/portfolio/image-1.webp",
     tech: ["Next.js", "Tailwind", "Typescript"],
     link: "https://talav-resort.vercel.app/",
   },
   {
     title: "United Sign Ads",
     category: "Web",
-    image: "/portfolio/image 2.png",
+    image: "/portfolio/image-2.webp",
     tech: ["NextJs", "Typescript", "Tailwind"],
     link: "https://united-sign-ads.vercel.app/",
   },
   {
     title: "Real-estate App",
     category: "Mobile",
-    image: "/portfolio/image 3.png",
+    image: "/portfolio/image-3.webp",
     tech: ["React-native", "Typescript", "Redis"],
     link: "#",
   },
@@ -113,6 +113,7 @@ export default function Portfolio() {
                     src={project.image}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2 opacity-50 group-hover:opacity-80"
                   />
                 </a>

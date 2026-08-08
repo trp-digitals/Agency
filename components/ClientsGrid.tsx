@@ -51,7 +51,7 @@ export default function ClientsGrid() {
             <span className="text-gradient">businesses at every stage.</span>
           </h2>
           <p className="text-white/60 text-base">
-            Whether you're starting from scratch or ready to scale, we build digital solutions around where your business is today and where you want to go next.
+            Whether you&apos;re starting from scratch or ready to scale, we build digital solutions around where your business is today and where you want to go next.
           </p>
         </motion.div>
 

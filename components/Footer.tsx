@@ -5,7 +5,7 @@ import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="py-20 border-t border-white/5 bg-background relative overflow-hidden">
+    <footer id="site-footer" className="py-20 border-t border-white/5 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-linear-to-r from-transparent via-primary/30 to-transparent" />
       <MaxWrapper>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">

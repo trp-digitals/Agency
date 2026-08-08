@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // ── Package Optimization ────────────────────────────────────────────────────────
+  experimental: {
+    optimizePackageImports: ["lucide-react", "react-icons", "framer-motion"],
+  },
+
   // ── Compression ───────────────────────────────────────────────────────────────
   // Enable gzip/brotli compression for all responses
   compress: true,

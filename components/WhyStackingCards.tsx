@@ -29,8 +29,10 @@ const cards = [
 
 export default function WhyStackingCards() {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+    <section className="py-24 bg-background relative overflow-x-clip">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary/5 blur-[120px] rounded-full" />
+      </div>
 
       <MaxWrapper>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

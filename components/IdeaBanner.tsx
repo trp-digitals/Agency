@@ -27,16 +27,16 @@ export default function IdeaBanner() {
         >
           {/* Ambient Glow Pill */}
           <span className="text-xs font-bold uppercase tracking-widest text-primary mb-4 inline-block px-4 py-1.5 rounded-full glass border-primary/20">
-            LET'S WORK TOGETHER
+            LET&apos;S WORK TOGETHER
           </span>
 
           <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight mb-6">
             Have a project in mind? <br />
-            <span className="text-gradient">Let's build it together.</span>
+            <span className="text-gradient">Let&apos;s build it together.</span>
           </h2>
 
           <p className="max-w-2xl mx-auto text-white/70 text-base leading-relaxed mb-10">
-            Tell us what you're looking to build. We'll help you choose the right digital solution and turn your idea into something your customers can use.
+            Tell us what you&apos;re looking to build. We&apos;ll help you choose the right digital solution and turn your idea into something your customers can use.
           </p>
 
           {/* Service Chips */}

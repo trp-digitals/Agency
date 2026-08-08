@@ -34,7 +34,7 @@ const PhilosophyItem = ({ icon: Icon, title, description }: any) => (
 
 export default function AboutClient() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] pt-32 pb-20 overflow-hidden">
+    <main className="min-h-screen bg-background pt-32 pb-20 overflow-hidden">
       {/* Background Orbs */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/10 blur-[120px] rounded-full" />
@@ -78,7 +78,7 @@ export default function AboutClient() {
             className="relative"
           >
             <div className="aspect-square rounded-[40px] overflow-hidden glass border-white/10 p-2">
-              <div className="w-full h-full rounded-[30px] bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative group">
+              <div className="w-full h-full rounded-[30px] bg-linear-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative group">
                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2301&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-30 grayscale group-hover:grayscale-0 transition-all duration-1000" />
                  <Sparkles className="w-20 h-20 text-white/20 animate-pulse" />
               </div>
@@ -149,7 +149,7 @@ export default function AboutClient() {
 
         {/* What Sets Us Apart */}
         <section className="mb-40 py-24 rounded-[60px] glass border-white/5 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/10 blur-[100px] rounded-full" />
+          <div className="absolute top-0 right-0 w-75 h-75 bg-primary/10 blur-[100px] rounded-full" />
           
           <MaxWrapper>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -224,7 +224,7 @@ export default function AboutClient() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-20 rounded-[80px] bg-gradient-to-br from-primary to-secondary relative overflow-hidden group"
+            className="p-20 rounded-[80px] bg-linear-to-br from-primary to-secondary relative overflow-hidden group"
           >
             <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-700" />
             <div className="relative z-10">

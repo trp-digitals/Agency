@@ -7,13 +7,9 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-/**
- * Custom 404 page — branded, on-theme, noindexed.
- * Next.js automatically returns a 404 HTTP status for this route.
- */
 export default function NotFound() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] flex items-center justify-center relative overflow-hidden">
+    <main className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden">
       {/* Background glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 blur-[150px] rounded-full -z-10" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-violet-500/8 blur-[120px] rounded-full -z-10" />
@@ -23,11 +19,11 @@ export default function NotFound() {
         <div className="relative mb-8 select-none">
           <span
             aria-hidden="true"
-            className="block text-[10rem] md:text-[14rem] font-black leading-none text-white/5 select-none pointer-events-none absolute inset-0 flex items-center justify-center"
+            className="flex text-[10rem] md:text-[14rem] font-black leading-none text-white/5 select-none pointer-events-none absolute inset-0 flex items-center justify-center"
           >
             404
           </span>
-          <span className="relative block text-[10rem] md:text-[14rem] font-black leading-none bg-gradient-to-br from-purple-400 via-violet-400 to-purple-600 bg-clip-text text-transparent">
+          <span className="relative block text-[10rem] md:text-[14rem] font-black leading-none bg-linear-to-br from-purple-400 via-violet-400 to-purple-600 bg-clip-text text-transparent">
             404
           </span>
         </div>
@@ -52,7 +48,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-white text-[#0a0a0a] font-bold hover:bg-purple-400 hover:text-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(192,132,252,0.4)]"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-white text-background font-bold hover:bg-purple-400 hover:text-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(192,132,252,0.4)]"
           >
             ← Back to Home
           </Link>

@@ -64,9 +64,9 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-32 relative overflow-hidden bg-[#0a0a0a]">
+    <section id="testimonials" className="py-32 relative overflow-hidden bg-background">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary/5 blur-[120px] rounded-full -z-10" />
 
       <MaxWrapper>
         <div className="text-center mb-16">
@@ -89,7 +89,7 @@ export default function Testimonials() {
           </motion.h2>
         </div>
 
-        <div className="relative h-[400px] md:h-[350px] flex items-center justify-center">
+        <div className="relative h-100 md:h-87.5 flex items-center justify-center">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={index}

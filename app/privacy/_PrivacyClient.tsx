@@ -1,9 +1,7 @@
 "use client";
 
 import { motion, useScroll, useSpring } from "framer-motion";
-import Navbar from "@/components/Navbar";
 import MaxWrapper from "@/components/ui/MaxWrapper";
-import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronRight, Shield, Clock } from "lucide-react";
@@ -65,12 +63,10 @@ export default function PrivacyClient() {
   };
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white selection:bg-primary/30">
-      <Navbar />
-      
+    <main className="min-h-screen bg-background text-white selection:bg-primary/30">
       {/* Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[60] origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-primary z-60 origin-left"
         style={{ scaleX }}
         aria-hidden="true"
       />
@@ -79,7 +75,7 @@ export default function PrivacyClient() {
         <div className="flex flex-col lg:flex-row gap-20">
           
           {/* Sticky Sidebar ToC */}
-          <aside className="lg:w-64 flex-shrink-0" aria-label="Table of contents">
+          <aside className="lg:w-64 shrink-0" aria-label="Table of contents">
             <div className="sticky top-40 space-y-6">
               <div className="flex items-center gap-2 text-primary mb-8 px-2">
                 <Shield className="w-5 h-5" aria-hidden="true" />
@@ -225,8 +221,6 @@ export default function PrivacyClient() {
           </div>
         </div>
       </MaxWrapper>
-
-      <Footer />
     </main>
   );
 }

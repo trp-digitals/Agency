@@ -1,12 +1,10 @@
 "use client";
 
 import { motion, useScroll, useSpring } from "framer-motion";
-import Navbar from "@/components/Navbar";
 import MaxWrapper from "@/components/ui/MaxWrapper";
-import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { ChevronRight, FileText, Clock, ExternalLink, Mail, ArrowRight } from "lucide-react";
+import { ChevronRight, FileText, Clock, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const sections = [
@@ -67,12 +65,10 @@ export default function TermsClient() {
   };
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white selection:bg-primary/30">
-      <Navbar />
-      
+    <main className="min-h-screen bg-background text-white selection:bg-primary/30">
       {/* Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[60] origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-primary z-60 origin-left"
         style={{ scaleX }}
         aria-hidden="true"
       />
@@ -81,7 +77,7 @@ export default function TermsClient() {
         <div className="flex flex-col lg:flex-row gap-20">
           
           {/* Sticky Sidebar Nav */}
-          <aside className="lg:w-72 flex-shrink-0" aria-label="Table of contents">
+          <aside className="lg:w-72 shrink-0" aria-label="Table of contents">
             <div className="sticky top-40 space-y-6">
               <div className="flex items-center gap-2 text-primary mb-8 px-2">
                 <FileText className="w-5 h-5" aria-hidden="true" />
@@ -242,7 +238,7 @@ export default function TermsClient() {
                   <div className="flex flex-wrap gap-4">
                     <Link 
                       href="/contact"
-                      className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white text-[#0a0a0a] font-bold hover:bg-primary hover:text-white transition-all group/btn"
+                      className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white text-background font-bold hover:bg-primary hover:text-white transition-all group/btn"
                     >
                       Contact Us
                       <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" aria-hidden="true" />
@@ -261,8 +257,6 @@ export default function TermsClient() {
           </div>
         </div>
       </MaxWrapper>
-
-      <Footer />
     </main>
   );
 }

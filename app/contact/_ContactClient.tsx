@@ -1,9 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import Navbar from "@/components/Navbar";
 import MaxWrapper from "@/components/ui/MaxWrapper";
-import Footer from "@/components/Footer";
 import { Mail, MessageSquare, Send, Phone, MapPin, ExternalLink, CheckCircle2, Loader2, ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -92,8 +90,6 @@ export default function ContactClient() {
 
   return (
     <main className="min-h-screen relative overflow-hidden bg-background">
-      <Navbar />
-      
       {/* Background glow effects */}
       <div className="absolute top-0 right-0 w-125 h-125 bg-primary/10 blur-[150px] rounded-full -z-10 animate-pulse" />
       <div className="absolute bottom-0 left-0 w-125 h-125 bg-blue-500/5 blur-[150px] rounded-full -z-10" />
@@ -301,8 +297,6 @@ export default function ContactClient() {
           )}
         </AnimatePresence>
       </MaxWrapper>
-
-      <Footer />
     </main>
   );
 }

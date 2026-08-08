@@ -1,8 +1,6 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
 import MaxWrapper from "@/components/ui/MaxWrapper";
-import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { 
   Globe, 
@@ -55,7 +53,7 @@ const services = [
     icon: Smartphone,
     features: [
       "iOS & Android Development",
-      "React Native & Flutter Expertise",
+      "React Native & Expo Expertise",
       "Native API Integrations",
       "Offline-First Architecture",
       "App Store Optimization (ASO)"
@@ -97,12 +95,10 @@ const services = [
 
 export default function ServicesClient() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white selection:bg-primary/30">
-      <Navbar />
-      
+    <main className="min-h-screen bg-background text-white selection:bg-primary/30">
       {/* Services Hero */}
       <section className="relative pt-48 pb-32 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/10 blur-[120px] rounded-full -z-10" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-250 h-150 bg-primary/10 blur-[120px] rounded-full -z-10" />
         <MaxWrapper>
           <div className="flex flex-col items-center text-center">
             <motion.div
@@ -172,7 +168,7 @@ export default function ServicesClient() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                     {service.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-3 group">
-                        <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                        <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                         <span className="text-foreground/80 font-medium">{feature}</span>
                       </div>
                     ))}
@@ -196,7 +192,7 @@ export default function ServicesClient() {
                     whileHover={{ scale: 1.02 }}
                     className="relative w-full aspect-square max-w-md rounded-[3rem] glass border-white/10 flex items-center justify-center group overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     <service.icon size={120} className="text-white/10 group-hover:text-primary/20 transition-colors" />
                     <div className="absolute inset-x-8 bottom-8 p-6 rounded-2xl glass border-white/5 backdrop-blur-2xl translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all">
                       <p className="text-sm font-bold text-center tracking-widest uppercase text-primary">
@@ -210,8 +206,6 @@ export default function ServicesClient() {
           </div>
         </MaxWrapper>
       </section>
-
-      <Footer />
     </main>
   );
 }

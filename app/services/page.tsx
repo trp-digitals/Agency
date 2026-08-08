@@ -1,65 +1,299 @@
-import type { Metadata } from "next";
-import { generatePageMetadata, generateWebPageJsonLd, generateFaqJsonLd, siteUrl } from "@/lib/seo";
-import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
-import JsonLd from "@/components/JsonLd";
-import ServicesClient from "./_ServicesClient";
+"use client";
 
-export const metadata: Metadata = generatePageMetadata({
-  title: "Our Services",
-  description:
-    "Explore TRP Digitals' premium digital services — web development, UI/UX design, mobile app development, full-stack engineering, and API integration. Based in Hyderabad, serving clients worldwide.",
-  path: "/services",
-  keywords: [
-    "web development services",
-    "UI UX design services",
-    "mobile app development India",
-    "full stack development agency",
-    "API integration services",
-    "Next.js development agency",
-    "React development Hyderabad",
-    "custom software development",
-  ],
-});
+import { useState } from "react";
+import { motion } from "framer-motion";
+import MaxWrapper from "@/components/ui/MaxWrapper";
+import Link from "next/link";
+import { Globe, Palette, Smartphone, Cpu, ShoppingCart, Zap, Check, ArrowRight, Sparkles } from "lucide-react";
 
-const webPageJsonLd = generateWebPageJsonLd({
-  title: "Our Services | TRP Digitals",
-  description: "Premium digital services — web, design, mobile, and full-stack.",
-  url: `${siteUrl}/services`,
-});
+const servicesList = [
+  {
+    icon: Globe,
+    title: "Web & Digital Development",
+    desc: "High-performance websites and web applications designed to help businesses establish, grow, and scale their digital presence.",
+    bullets: ["Business Websites and Landing Pages", "Custom Web Applications", "Responsive & Mobile-First Design", "SEO-Ready Development"],
+  },
+  {
+    icon: Palette,
+    title: "UI/UX & Product Design",
+    desc: "User-focused interfaces and design systems crafted to create beautiful, intuitive, and conversion-driven digital experiences.",
+    bullets: ["Figma UI/UX Design", "Design Systems & Components", "Wireframes & Prototypes", "User-Centered Design"],
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile App Development",
+    desc: "Modern Android and iOS applications built for performance, usability, and seamless user experiences.",
+    bullets: ["Android & iOS Applications", "React Native Development", "Cross-Platform Development", "App Store Deployment"],
+  },
+  {
+    icon: Cpu,
+    title: "SaaS & Custom Platforms",
+    desc: "Scalable SaaS products and custom digital platforms built around your business workflows and growth goals.",
+    bullets: ["SaaS Application Development", "Custom Dashboards", "Authentication & User Management", "APIs & Database Integration"],
+  },
+  {
+    icon: ShoppingCart,
+    title: "E-Commerce Solutions",
+    desc: "Conversion-focused online stores with secure payments, product management, and scalable e-commerce experiences.",
+    bullets: ["Custom E-Commerce Stores", "Product & Order Management", "Payment Gateway Integration", "WhatsApp & Automation"],
+  },
+  {
+    icon: Zap,
+    title: "AI & Business Automation",
+    desc: "Intelligent AI solutions and automated workflows that reduce manual work and help businesses operate smarter.",
+    bullets: ["AI Chatbots & Assistants", "AI-Powered Features", "Business Workflow Automation", "API & AI Integrations"],
+  },
+];
 
-const faqJsonLd = generateFaqJsonLd([
+const packages = [
   {
-    question: "What services does TRP Digitals offer?",
-    answer:
-      "TRP Digitals offers web development, UI/UX design, mobile app development, full-stack application engineering, and API integration services.",
+    name: "Launchpad",
+    badge: "For Small Businesses",
+    price: "10,000",
+    desc: "Everything you need to launch a professional digital presence",
+    features: [
+      "Upto 5 Pages",
+      "Mobile First Design",
+      "Technical SEO Setup",
+      "Whatsapp and Forms",
+      "2-4 Weeks",
+      "15 days support",
+    ],
   },
   {
-    question: "Where is TRP Digitals based?",
-    answer:
-      "We are based in Hyderabad, Telangana, India, and serve clients globally.",
+    name: "Scaleup",
+    badge: "For Growing Businesses",
+    price: "16,000",
+    desc: "Advanced digital experiences built to generate leads and support growth",
+    features: [
+      "Everything in Launch",
+      "Upto 15 Pages",
+      "CMS Dashboard",
+      "API Integrations",
+      "Advanced SEO",
+      "4-6 weeks",
+      "30 days support",
+    ],
+    popular: true,
   },
   {
-    question: "Do you build custom websites or use templates?",
-    answer:
-      "All our solutions are custom-built from scratch. We never use templates — every project is uniquely tailored to your brand and goals.",
+    name: "Enterprise Growth",
+    badge: "For Established Companies",
+    price: "25,000",
+    desc: "Custom digital platforms and automation built for ambitious businesses",
+    features: [
+      "Everything in Growth",
+      "20+ Pages",
+      "Custom Web Platform",
+      "AI Automation",
+      "Priority Support",
+      "8-12 weeks",
+    ],
   },
-  {
-    question: "What technologies do you use for web development?",
-    answer:
-      "We specialize in Next.js, React, Node.js, Python, and cloud platforms including AWS and Google Cloud.",
-  },
-]);
+];
 
 export default function ServicesPage() {
-  return (
-    <>
-      {/* Structured Data */}
-      <BreadcrumbJsonLd crumbs={[{ name: "Services", path: "/services" }]} />
-      <JsonLd id="webpage-jsonld" data={webPageJsonLd} />
-      <JsonLd id="faq-jsonld" data={faqJsonLd} />
+  const [showCompareModal, setShowCompareModal] = useState(false);
 
-      {/* Page Content */}
-      <ServicesClient />
-    </>
+  return (
+    <main className="min-h-screen bg-background pt-28 pb-20 overflow-hidden text-foreground">
+      
+      {/* Page Hero */}
+      <section className="relative py-16 border-b border-white/5">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 blur-[140px] rounded-full pointer-events-none" />
+
+        <MaxWrapper>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl text-left"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>FULL SERVICE CATALOG</span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+              Everything Digital. <br />
+              <span className="text-gradient">Built for Your Business.</span>
+            </h1>
+
+            <p className="text-white/70 text-lg sm:text-xl font-medium leading-relaxed max-w-2xl">
+              From websites and mobile apps to SaaS, e-commerce, AI automation, and digital marketing — TRP Digitals provides the digital solutions your business needs to build, launch, and grow.
+            </p>
+          </motion.div>
+        </MaxWrapper>
+      </section>
+
+      {/* 8 Core Services Grid */}
+      <section className="py-24 border-b border-white/5">
+        <MaxWrapper>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+              What We Build
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+              Our core digital <span className="text-gradient">capabilities.</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+            {servicesList.map((svc, idx) => {
+              const Icon = svc.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  className="glass-card p-8 rounded-2xl border border-white/10 flex flex-col justify-between h-full group hover:border-primary/30 transition-all shadow-lg"
+                >
+                  <div className="flex flex-col grow">
+                    <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                      <Icon className="w-6 h-6" />
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{svc.title}</h3>
+                    <p className="text-white/60 text-xs leading-relaxed mb-6">{svc.desc}</p>
+
+                    <ul className="space-y-2.5 mb-6 mt-auto">
+                      {svc.bullets.map((b, i) => (
+                        <li key={i} className="text-xs text-white/80 flex items-start gap-2.5">
+                          <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Link
+                    href="/contact"
+                    className="cta-primary w-full py-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-2 mt-4 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  >
+                    <span>Discuss Project</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+        </MaxWrapper>
+      </section>
+
+      {/* Multi-Service Packages */}
+      <section className="py-24 border-b border-white/5">
+        <MaxWrapper>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+              Multi-Service Packages
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+              One partner. <span className="text-gradient">Three ways to scale.</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {packages.map((pkg, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                className={`glass-card p-8 rounded-3xl border flex flex-col justify-between relative ${
+                  pkg.popular ? "border-primary shadow-[0_0_40px_rgba(192,132,252,0.2)]" : "border-white/10"
+                }`}
+              >
+                {pkg.popular && (
+                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-wider shadow-lg">
+                    Recommended
+                  </span>
+                )}
+
+                <div>
+                  <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-2">{pkg.badge}</span>
+                  <h3 className="text-2xl font-black text-white mb-2">{pkg.name}</h3>
+                  <p className="text-white/60 text-xs mb-6 leading-relaxed">{pkg.desc}</p>
+
+                  <ul className="space-y-3 mb-8">
+                    {pkg.features.map((feat, i) => (
+                      <li key={i} className="text-xs text-white/80 flex items-center gap-2.5">
+                        <Check className="w-4 h-4 text-primary shrink-0" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Link
+                  href="/contact"
+                  className={`w-full py-4 rounded-full text-xs font-bold text-center flex items-center justify-center gap-2 ${
+                    pkg.popular ? "cta-primary" : "glass border border-white/20 text-white hover:bg-white/10"
+                  }`}
+                >
+                  <span>Discuss Your Package</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <button
+              onClick={() => setShowCompareModal(!showCompareModal)}
+              className="text-xs font-bold text-primary hover:underline cursor-pointer"
+            >
+              {showCompareModal ? "Hide Package Comparison Matrix ▲" : "Compare All Package Features Side-by-Side ▼"}
+            </button>
+          </div>
+
+          {/* Comparison Matrix */}
+          {showCompareModal && (
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-8 glass-card p-6 rounded-2xl border border-white/10 overflow-x-auto"
+            >
+              <table className="w-full text-left text-xs text-white">
+                <thead>
+                  <tr className="border-b border-white/10 text-primary font-bold">
+                    <th className="p-3">Feature</th>
+                    <th className="p-3">Launchpad</th>
+                    <th className="p-3">Scaleup</th>
+                    <th className="p-3">Enterprise Growth</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5 text-white/70">
+                   <tr><td className="p-3 font-semibold text-white">Pages</td><td className="p-3">Up to 5</td><td className="p-3 text-primary font-bold">Up to 15</td><td className="p-3">20+</td></tr>
+                   <tr><td className="p-3 font-semibold text-white">Design</td><td className="p-3">Custom Responsive</td><td className="p-3 text-primary font-bold">Advanced UI/UX</td><td className="p-3">Custom Product Design</td></tr>
+                   <tr><td className="p-3 font-semibold text-white">CMS</td><td className="p-3">—</td><td className="p-3 text-primary font-bold">✓</td><td className="p-3">✓</td></tr>
+                   <tr><td className="p-3 font-semibold text-white">Integrations</td><td className="p-3">WhatsApp & Forms</td><td className="p-3 text-primary font-bold">Advanced APIs</td><td className="p-3">Custom Workflows</td></tr>
+                   <tr><td className="p-3 font-semibold text-white">SEO</td><td className="p-3">Technical</td><td className="p-3 text-primary font-bold">Advanced</td><td className="p-3">Enterprise</td></tr>
+                   <tr><td className="p-3 font-semibold text-white">AI</td><td className="p-3">—</td><td className="p-3 text-primary font-bold">—</td><td className="p-3">✓</td></tr>
+                   <tr><td className="p-3 font-semibold text-white">Delivery</td><td className="p-3">2–4 Weeks</td><td className="p-3 text-primary font-bold">4–6 Weeks</td><td className="p-3">8–12 Weeks</td></tr>
+                   <tr><td className="p-3 font-semibold text-white">Support</td><td className="p-3">15 Days</td><td className="p-3 text-primary font-bold">30 Days</td><td className="p-3">Priority</td></tr>
+                </tbody>
+              </table>
+            </motion.div>
+          )}
+
+        </MaxWrapper>
+      </section>
+
+    </main>
   );
 }

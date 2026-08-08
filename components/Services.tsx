@@ -2,125 +2,171 @@
 
 import { motion } from "framer-motion";
 import MaxWrapper from "./ui/MaxWrapper";
-import { Globe, Palette, Smartphone, Cpu, Zap, ArrowRight } from "lucide-react";
+import { Globe, Palette, Smartphone, Cpu, ShoppingCart, Zap, Check, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 
-const services = [
+const allServices = [
   {
-    title: "Web Development",
-    description: "High-performance, responsive websites built with the latest frameworks and best practices.",
     icon: Globe,
-    color: "text-blue-500",
-    bg: "bg-blue-500/10",
+    title: "Web & Digital Development",
+    description:
+      "High-performance websites and web applications designed to help businesses establish, grow, and scale their digital presence.",
+    bullets: [
+      "Business Websites and Landing Pages",
+      "Custom Web Applications",
+      "Responsive & Mobile-First Design",
+      "SEO-Ready Development",
+    ],
   },
   {
-    title: "UI/UX Design",
-    description: "User-centric design focused on creating intuitive, beautiful, and engaging digital interfaces.",
     icon: Palette,
-    color: "text-purple-500",
-    bg: "bg-purple-500/10",
+    title: "UI/UX & Product Design",
+    description:
+      "User-focused interfaces and design systems crafted to create beautiful, intuitive, and conversion-driven digital experiences.",
+    bullets: [
+      "Figma UI/UX Design",
+      "Design Systems & Components",
+      "Wireframes & Prototypes",
+      "User-Centered Design",
+    ],
   },
   {
-    title: "Mobile App Development",
-    description: "Native and cross-platform mobile applications that provide seamless user experiences.",
     icon: Smartphone,
-    color: "text-emerald-500",
-    bg: "bg-emerald-500/10",
+    title: "Mobile App Development",
+    description:
+      "Modern Android and iOS applications built for performance, usability, and seamless user experiences.",
+    bullets: [
+      "Android & iOS Applications",
+      "React Native Development",
+      "Cross-Platform Development",
+      "App Store Deployment",
+    ],
   },
   {
-    title: "Full Stack Applications",
-    description: "End-to-end development of robust, scalable applications with powerful backend logic.",
     icon: Cpu,
-    color: "text-orange-500",
-    bg: "bg-orange-500/10",
+    title: "SaaS & Custom Platforms",
+    description:
+      "Scalable SaaS products and custom digital platforms built around your business workflows and growth goals.",
+    bullets: [
+      "SaaS Application Development",
+      "Custom Dashboards",
+      "Authentication & User Management",
+      "APIs & Database Integration",
+    ],
   },
   {
-    title: "API Integration",
-    description: "Connecting systems and streamlining workflows through secure and efficient API solutions.",
+    icon: ShoppingCart,
+    title: "E-Commerce Solutions",
+    description:
+      "Conversion-focused online stores with secure payments, product management, and scalable e-commerce experiences.",
+    bullets: [
+      "Custom E-Commerce Stores",
+      "Product & Order Management",
+      "Payment Gateway Integration",
+      "WhatsApp & Automation",
+    ],
+  },
+  {
     icon: Zap,
-    color: "text-yellow-500",
-    bg: "bg-yellow-500/10",
+    title: "AI & Business Automation",
+    description:
+      "Intelligent AI solutions and automated workflows that reduce manual work and help businesses operate smarter.",
+    bullets: [
+      "AI Chatbots & Assistants",
+      "AI-Powered Features",
+      "Business Workflow Automation",
+      "API & AI Integrations",
+    ],
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 relative overflow-hidden bg-background">
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-125 h-125 bg-primary/5 blur-[120px] rounded-full -z-10" />
+    <section id="services" className="py-24 relative overflow-hidden bg-background">
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
       <MaxWrapper>
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="text-primary font-bold tracking-widest uppercase text-sm mb-4"
-            >
-              Our Expertise
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-black leading-tight"
-            >
-              Tailored Digital <br />
-              <span className="text-white/40">Solutions for You</span>
-            </motion.h2>
-          </div>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl text-left"
           >
-            <Link 
+            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+              Six Core Capabilities
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+              From ideas to <br />
+              <span className="text-gradient">Digital Growth</span>
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Link
               href="/services"
-              className="group flex items-center gap-3 px-8 py-4 rounded-full glass border-white/5 hover:border-primary/30 transition-all text-white font-bold"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border-white/15 text-white text-sm font-semibold hover:border-primary/40 transition-all"
             >
-              View All Services
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <span>View all services</span>
+              <ArrowRight className="w-4 h-4 text-primary" />
             </Link>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group relative p-6 md:p-10 rounded-[2.5rem] glass border-white/5 hover:border-primary/20 transition-all overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              
-              <div className={cn("w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-6 md:mb-8 relative z-10 transition-transform group-hover:scale-110", service.bg)}>
-                <service.icon className={cn("w-6 h-6 md:w-8 md:h-8", service.color)} />
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          {allServices.map((svc, idx) => {
+            const Icon = svc.icon;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                className="glass-card p-6 sm:p-8 rounded-2xl border border-white/10 flex flex-col justify-between h-full group hover:border-primary/30 transition-all shadow-lg"
+              >
+                <div className="flex flex-col grow">
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                    <Icon className="w-6 h-6" />
+                  </div>
 
-              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 relative z-10 group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-foreground/65 leading-relaxed text-base md:text-lg relative z-10">
-                {service.description}
-              </p>
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                    {svc.title}
+                  </h3>
 
-              <div className="mt-8 relative z-10 opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0">
-                <span className="text-primary font-bold flex items-center gap-2 text-sm uppercase tracking-widest">
-                  Learn More <ArrowRight size={14} />
-                </span>
-              </div>
-            </motion.div>
-          ))}
+                  <p className="text-white/60 text-xs sm:text-sm leading-relaxed mb-6">
+                    {svc.description}
+                  </p>
+
+                  <ul className="space-y-2.5 mb-6 mt-auto">
+                    {svc.bullets.map((b, i) => (
+                      <li key={i} className="text-xs sm:text-sm text-white/80 flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Link
+                  href="/contact"
+                  className="cta-primary w-full py-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-2 mt-4 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                >
+                  <span>Discuss Project</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </MaxWrapper>
     </section>
   );
 }
+

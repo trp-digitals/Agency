@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import MaxWrapper from "./ui/MaxWrapper";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,10 +11,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 
 const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Portfolio", href: "/portfolio" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -30,117 +30,140 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Close menu on ESC key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled 
-          ? "bg-background/80 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl" 
-          : "bg-transparent py-6"
-      )}
-    >
-      <MaxWrapper className="flex items-center justify-between">
-        <Link href="/">
-          <Logo />
-        </Link>
-
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-10">
-          <div className="flex items-center gap-8 px-6 py-2 rounded-full glass border-white/5">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={cn(
-                    "relative text-sm font-medium transition-colors hover:text-white",
-                    isActive ? "text-white" : "text-foreground/50"
-                  )}
-                >
-                  {link.name}
-                  {isActive && (
-                    <motion.div
-                      layoutId="nav-underline"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
-                  {!isActive && (
-                    <motion.div
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white/20 opacity-0 transition-opacity group-hover:opacity-100"
-                      initial={false}
-                      whileHover={{ opacity: 1 }}
-                    />
-                  )}
-                </Link>
-              );
-            })}
-          </div>
-          <Link 
-            href="/contact"
-            className="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-bold neon-purple hover:scale-105 active:scale-95 transition-all"
-          >
-            Get Started
+    <>
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-40 transition-all duration-500",
+          scrolled
+            ? "bg-background/80 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl"
+            : "bg-transparent py-6"
+        )}
+      >
+        <MaxWrapper className="flex items-center justify-between">
+          <Link href="/" onClick={() => setIsOpen(false)}>
+            <Logo />
           </Link>
-        </div>
 
-        {/* Mobile Toggle — 48px touch target (WCAG 2.5.5) */}
-        <button
-          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={isOpen}
-          aria-controls="mobile-menu"
-          className="md:hidden touch-target w-12 h-12 flex items-center justify-center text-foreground hover:bg-white/5 rounded-xl transition-colors"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
-      </MaxWrapper>
+          {/* Desktop Links */}
+          <div className="hidden md:flex items-center gap-10">
+            <div className="flex items-center gap-8 px-6 py-2 rounded-full glass border-white/5">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={cn(
+                      "relative text-sm font-medium transition-colors hover:text-white",
+                      isActive ? "text-white" : "text-foreground/50"
+                    )}
+                  >
+                    {link.name}
+                    {isActive && (
+                      <motion.div
+                        layoutId="nav-underline"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
+            <Link
+              href="/contact"
+              className="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-bold neon-purple hover:scale-105 active:scale-95 transition-all"
+            >
+              Get Started
+            </Link>
+          </div>
 
-      {/* Mobile Menu */}
+          {/* Mobile Toggle Button */}
+          <button
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            className="md:hidden touch-target w-12 h-12 flex items-center justify-center text-foreground hover:bg-white/5 rounded-xl transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </MaxWrapper>
+      </header>
+
+      {/* Floating Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <>
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[-1] md:hidden"
+              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 md:hidden"
             />
+
+            {/* Floating Menu Card */}
             <motion.div
               id="mobile-menu"
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-75 bg-background border-l border-white/10 z-50 md:hidden flex flex-col p-8"
+              initial={{ opacity: 0, y: -16, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -12, scale: 0.96 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed top-20 left-4 right-4 max-w-md mx-auto z-50 md:hidden bg-[#0d0d12]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.8)] shadow-primary/10 overflow-hidden flex flex-col gap-6"
             >
-              <div className="flex justify-between items-center mb-12">
-                <span className="text-xl font-bold italic">Menu</span>
-                <button 
+              <div className="flex justify-between items-center pb-4 border-b border-white/10">
+                <Logo />
+                <button
                   onClick={() => setIsOpen(false)}
-                  className="w-10 h-10 flex items-center justify-center rounded-full glass hover:bg-white/10"
+                  aria-label="Close navigation menu"
+                  className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-foreground/80 hover:text-white hover:bg-white/10 transition-colors"
                 >
                   <X size={20} />
                 </button>
               </div>
 
-              <div className="flex flex-col gap-2">
+              <nav className="flex flex-col gap-2">
                 {navLinks.map((link, idx) => {
                   const isActive = pathname === link.href;
                   return (
                     <motion.div
                       key={link.name}
-                      initial={{ opacity: 0, x: 20 }}
+                      initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.1 + idx * 0.05 }}
+                      transition={{ delay: 0.04 + idx * 0.04 }}
                     >
                       <Link
                         href={link.href}
                         className={cn(
-                          "flex items-center min-h-13 px-3 rounded-xl text-2xl font-semibold transition-colors",
-                          isActive ? "text-primary bg-primary/5" : "text-foreground/60 hover:text-white hover:bg-white/5"
+                          "flex items-center min-h-12 px-4 rounded-xl text-base sm:text-lg font-semibold transition-all duration-200",
+                          isActive
+                            ? "text-primary bg-primary/15 border-l-4 border-primary pl-3 font-bold"
+                            : "text-foreground/80 hover:text-white hover:bg-white/5"
                         )}
                         onClick={() => setIsOpen(false)}
                       >
@@ -149,13 +172,13 @@ export default function Navbar() {
                     </motion.div>
                   );
                 })}
-              </div>
+              </nav>
 
-              <div className="mt-auto">
-                <Link 
+              <div className="pt-4 border-t border-white/10">
+                <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full py-5 min-h-14 rounded-2xl bg-white text-background font-black text-center flex items-center justify-center shadow-[0_0_30px_rgba(192,132,252,0.3)] hover:bg-primary hover:text-white transition-all"
+                  className="w-full py-3.5 px-4 rounded-xl bg-primary text-white font-bold text-center flex items-center justify-center shadow-[0_0_25px_rgba(192,132,252,0.3)] hover:brightness-110 active:scale-95 transition-all"
                 >
                   Get Started — Free Consult
                 </Link>
@@ -164,6 +187,7 @@ export default function Navbar() {
           </>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 }
+

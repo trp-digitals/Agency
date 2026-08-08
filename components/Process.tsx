@@ -1,120 +1,79 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import MaxWrapper from "./ui/MaxWrapper";
-import { Search, PenTool, Code2, Rocket } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { FileText, Cpu, CheckCircle2 } from "lucide-react";
 
 const steps = [
   {
-    title: "Discovery",
-    description: "We dive deep into your brand, goals, and target audience to define the perfect digital strategy.",
-    icon: Search,
-    color: "text-blue-500",
-    bg: "bg-blue-500/10",
+    num: "01",
+    icon: FileText,
+    title: "Tell Us What You Need",
+    desc: "Share your business, idea, goals, and requirements. We'll understand what you're trying to achieve and recommend the right digital solution.",
   },
   {
-    title: "Planning",
-    description: "Detailed wireframes, interactive prototypes, and a robust technical roadmap for your project.",
-    icon: PenTool,
-    color: "text-purple-500",
-    bg: "bg-purple-500/10",
+    num: "02",
+    icon: Cpu,
+    title: "Design & Build",
+    desc: "Our team handles the design and development while keeping you updated throughout the process. No technical complexity on your side.",
   },
   {
-    title: "Development",
-    description: "Bringing designs to life with clean, scalable code and high-performance frameworks.",
-    icon: Code2,
-    color: "text-emerald-500",
-    bg: "bg-emerald-500/10",
-  },
-  {
-    title: "Launch",
-    description: "Final optimization, rigorous testing, and a seamless deployment to the production environment.",
-    icon: Rocket,
-    color: "text-orange-500",
-    bg: "bg-orange-500/10",
+    num: "03",
+    icon: CheckCircle2,
+    title: "Launch & Grow",
+    desc: "We test, launch, and hand over your finished product with full ownership. Post-launch support helps you keep improving as your business grows.",
   },
 ];
 
 export default function Process() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const pathLength = useTransform(scrollYProgress, [0.2, 0.8], [0, 1]);
-
   return (
-    <section ref={containerRef} id="process" className="py-32 relative overflow-hidden bg-background">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-100 h-100 bg-primary/5 blur-[120px] rounded-full -z-10" />
-
+    <section className="py-24 bg-background relative border-y border-white/5">
       <MaxWrapper>
-        <div className="text-center mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-primary font-bold tracking-widest uppercase text-sm mb-4"
-          >
-            Our Workflow
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-black text-white"
-          >
-            How We <span className="text-white/40">Work</span>
-          </motion.h2>
-        </div>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+            HOW IT WORKS
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
+            From idea to launch. <br />
+            <span className="text-gradient">Simple. Transparent.</span>
+          </h2>
+          <p className="text-white/60 text-base">
+            A straightforward process designed to take your idea from the first conversation to a finished digital product.
+          </p>
+        </motion.div>
 
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute top-15 left-0 w-full h-0.5 bg-white/5 hidden lg:block">
-            <motion.div
-              style={{ scaleX: pathLength, originX: 0 }}
-              className="h-full bg-linear-to-r from-blue-500 via-primary to-orange-500"
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-            {steps.map((step, index) => (
+        {/* Process Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          {steps.map((step, idx) => {
+            const Icon = step.icon;
+            return (
               <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 30 }}
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative group"
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                className="glass-card p-8 rounded-2xl border border-white/10 relative flex flex-col"
               >
-                {/* Step Number Badge */}
-                <div className="hidden lg:flex absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full glass border-white/10 items-center justify-center text-xs font-black text-white z-20">
-                  0{index + 1}
-                </div>
-
-                {/* Card Container */}
-                <div className="relative p-6 md:p-10 rounded-[2.5rem] glass border-white/5 hover:border-primary/20 transition-all text-center group-hover:bg-white/5">
-                  <div className="inline-flex w-14 h-14 md:w-20 md:h-20 rounded-2xl items-center justify-center mb-6 md:mb-8 relative transition-transform group-hover:scale-110">
-                    <div className={cn("absolute inset-0 blur-xl opacity-20", step.bg)} />
-                    <div className={cn("relative z-10 w-full h-full rounded-2xl flex items-center justify-center", step.bg)}>
-                      <step.icon className={cn("w-10 h-10", step.color)} />
-                    </div>
+                <div className="flex justify-between items-center mb-6">
+                  <span className="text-3xl font-black text-primary font-mono">{step.num}</span>
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center text-primary">
+                    <Icon className="w-6 h-6" />
                   </div>
-
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white group-hover:text-primary transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-white/65 leading-relaxed text-sm">
-                    {step.description}
-                  </p>
                 </div>
+
+                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{step.desc}</p>
               </motion.div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </MaxWrapper>
     </section>

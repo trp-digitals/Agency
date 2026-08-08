@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { generatePageMetadata, generateWebPageJsonLd, siteUrl } from "@/lib/seo";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import JsonLd from "@/components/JsonLd";
-import Navbar from "@/components/Navbar";
 import Portfolio from "@/components/Portfolio";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Portfolio",
@@ -37,9 +35,7 @@ export default function PortfolioPage() {
 
       {/* Page Content */}
       <main className="min-h-screen pt-20">
-        <Navbar />
         <Portfolio />
-        <Footer />
       </main>
     </>
   );

@@ -49,7 +49,7 @@ const allServices = [
       "Scalable SaaS products and custom digital platforms built around your business workflows and growth goals.",
     bullets: [
       "SaaS Application Development",
-      "Custom Dashboards",
+      "Custom Dashboards & Portals",
       "Authentication & User Management",
       "APIs & Database Integration",
     ],

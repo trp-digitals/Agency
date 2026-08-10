@@ -6,11 +6,11 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const serviceChips = [
-  "Web & WebApps",
+  "Web & Digital",
   "UI/UX Design",
   "Mobile Apps",
+  "SaaS & Custom",
   "E-Commerce",
-  "SaaS & Custom Platforms",
   "AI & Automation",
 ];
 

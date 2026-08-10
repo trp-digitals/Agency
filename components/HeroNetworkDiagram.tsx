@@ -1,10 +1,10 @@
 const services = [
   { title: "SAAS & CUSTOM", subtitle: "Digital Platforms", angle: 0 },
-  { title: "DIGITAL MARKETING", subtitle: "SEO & Growth", angle: 60 },
+  { title: "E-COMMERCE", subtitle: "Online Stores", angle: 60 },
   { title: "AI & AUTOMATION", subtitle: "AI-Powered Workflows", angle: 120 },
   { title: "UI/UX & PRODUCT", subtitle: "Design & Prototypes", angle: 180 },
   { title: "WEB & DIGITAL", subtitle: "Websites & WebApps", angle: 240 },
-  { title: "MOBILE & E-COMMERCE", subtitle: "Apps & Online Stores", angle: 300 },
+  { title: "MOBILE APPS", subtitle: "Android & iOS Apps", angle: 300 },
 ];
 
 const round = (num: number) => Number(num.toFixed(4));
@@ -21,7 +21,7 @@ export default function HeroNetworkDiagram() {
           className="w-full h-full text-white overflow-visible"
           viewBox="0 0 800 800"
           role="img"
-          aria-label="TRP Digitals Core Services Network Diagram: SaaS & Custom, Digital Marketing, AI & Automation, UI/UX & Product, Web & Digital, Mobile & E-Commerce"
+          aria-label="TRP Digitals Core Services Network Diagram: Web & Digital, UI/UX & Product, Mobile App Development, SaaS & Custom Platforms, E-Commerce Solutions, AI & Business Automation"
         >
           <defs>
             <radialGradient id="trp-center-glow" cx="50%" cy="50%" r="50%">

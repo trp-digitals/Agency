@@ -29,7 +29,7 @@ const servicesList = [
     icon: Cpu,
     title: "SaaS & Custom Platforms",
     desc: "Scalable SaaS products and custom digital platforms built around your business workflows and growth goals.",
-    bullets: ["SaaS Application Development", "Custom Dashboards", "Authentication & User Management", "APIs & Database Integration"],
+    bullets: ["SaaS Application Development", "Custom Dashboards & Portals", "Authentication & User Management", "APIs & Database Integration"],
   },
   {
     icon: ShoppingCart,

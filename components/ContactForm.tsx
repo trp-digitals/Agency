@@ -50,10 +50,14 @@ export default function ContactForm() {
         }),
       });
 
-      const data = await res.json();
+      let data: any = null;
+      const contentType = res.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        data = await res.json();
+      }
 
       if (!res.ok) {
-        throw new Error(data.error || "Failed to send message.");
+        throw new Error(data?.error || "Failed to send message. Please try again.");
       }
 
       setSubmitted(true);

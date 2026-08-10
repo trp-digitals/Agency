@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const serviceOptions = [
@@ -17,12 +17,63 @@ export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [botTrap, setBotTrap] = useState("");
+  const [draftSavedStatus, setDraftSavedStatus] = useState<string | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
+
+  // 1. Restore draft from localStorage on mount
+  useEffect(() => {
+    try {
+      const savedDraft = localStorage.getItem("trp_contact_form_draft");
+      if (savedDraft) {
+        const parsed = JSON.parse(savedDraft);
+        if (parsed.formData) {
+          setFormData(parsed.formData);
+        }
+        if (Array.isArray(parsed.selectedServices)) {
+          setSelectedServices(parsed.selectedServices);
+        }
+        setDraftSavedStatus("Draft restored");
+      }
+    } catch (e) {
+      console.error("Failed to restore contact form draft:", e);
+    } finally {
+      setIsLoaded(true);
+    }
+  }, []);
+
+  // 2. Save draft to localStorage whenever form values change
+  useEffect(() => {
+    if (!isLoaded || submitted) return;
+
+    const hasData =
+      formData.name.trim() !== "" ||
+      formData.email.trim() !== "" ||
+      formData.phone.trim() !== "" ||
+      formData.message.trim() !== "" ||
+      selectedServices.length > 0;
+
+    if (hasData) {
+      try {
+        localStorage.setItem(
+          "trp_contact_form_draft",
+          JSON.stringify({ formData, selectedServices })
+        );
+        setDraftSavedStatus("Draft saved");
+      } catch (e) {
+        console.error("Failed to save contact form draft:", e);
+      }
+    } else {
+      localStorage.removeItem("trp_contact_form_draft");
+      setDraftSavedStatus(null);
+    }
+  }, [formData, selectedServices, isLoaded, submitted]);
 
   const toggleService = (service: string) => {
     if (selectedServices.includes(service)) {
@@ -47,6 +98,7 @@ export default function ContactForm() {
           phone: formData.phone,
           projectType: selectedServices.length > 0 ? selectedServices.join(", ") : "General Inquiry",
           message: formData.message,
+          bot_trap: botTrap,
         }),
       });
 
@@ -60,6 +112,9 @@ export default function ContactForm() {
         throw new Error(data?.error || "Failed to send message. Please try again.");
       }
 
+      // Clear draft on successful submit
+      localStorage.removeItem("trp_contact_form_draft");
+      setDraftSavedStatus(null);
       setSubmitted(true);
     } catch (err: any) {
       console.error("Contact Form submit error:", err);
@@ -71,7 +126,15 @@ export default function ContactForm() {
 
   return (
     <div className="glass-card p-8 sm:p-10 rounded-3xl border border-primary/20 relative">
-      <h3 className="text-2xl font-bold text-white mb-6">Start a Conversation</h3>
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-2xl font-bold text-white">Start a Conversation</h3>
+        {draftSavedStatus && !submitted && (
+          <span className="text-[11px] font-semibold tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            {draftSavedStatus}
+          </span>
+        )}
+      </div>
 
       {submitted ? (
         <div className="py-16 text-center">
@@ -83,6 +146,16 @@ export default function ContactForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Hidden honeypot field to block automated spam bots */}
+          <input
+            type="text"
+            name="bot_trap"
+            value={botTrap}
+            onChange={(e) => setBotTrap(e.target.value)}
+            className="hidden"
+            tabIndex={-1}
+            autoComplete="off"
+          />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-white/60 mb-2">

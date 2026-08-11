@@ -24,3 +24,7 @@ export default function Home() {
   );
 }
 
+// EMAILJS_SERVICE_ID=service_3ykgu8j
+// EMAILJS_TEMPLATE_ID=template_p4p4zw9
+// EMAILJS_PUBLIC_KEY=Kk45S6V-0pZGo9gvp
+// EMAILJS_PRIVATE_KEY=p2dt86Y3KGvDGBBuWKJBy

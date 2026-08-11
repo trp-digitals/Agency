@@ -42,7 +42,7 @@ const round = (num: number) => Number(num.toFixed(4));
 export default function HeroNetworkDiagram() {
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="relative w-full max-w-[340px] min-[400px]:max-w-[390px] sm:max-w-xl lg:max-w-2xl mx-auto aspect-square flex items-center justify-center px-1">
+      <div className="relative w-full max-w-85 min-[400px]:max-w-97.5 sm:max-w-xl lg:max-w-2xl mx-auto aspect-square flex items-center justify-center px-1">
         {/* Background Radial Glow */}
         <div
           className="absolute inset-0 bg-linear-to-r from-primary/15 via-secondary/15 to-accent/10 rounded-full blur-3xl pointer-events-none"

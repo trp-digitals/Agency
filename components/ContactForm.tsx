@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import Skeleton from "@/components/ui/Skeleton";
 
 const serviceOptions = [
   "Web & Digital Development",
@@ -128,7 +129,7 @@ export default function ContactForm() {
     <div className="glass-card p-8 sm:p-10 rounded-3xl border border-primary/20 relative">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-2xl font-bold text-white">Start a Conversation</h3>
-        {draftSavedStatus && !submitted && (
+        {draftSavedStatus && !submitted && isLoaded && (
           <span className="text-[11px] font-semibold tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
             {draftSavedStatus}
@@ -136,7 +137,37 @@ export default function ContactForm() {
         )}
       </div>
 
-      {submitted ? (
+      {!isLoaded ? (
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <Skeleton className="h-3 w-20 rounded-md" />
+              <Skeleton className="h-12 w-full rounded-xl" />
+            </div>
+            <div className="space-y-2">
+              <Skeleton className="h-3 w-24 rounded-md" />
+              <Skeleton className="h-12 w-full rounded-xl" />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <Skeleton className="h-3 w-28 rounded-md" />
+            <Skeleton className="h-12 w-full rounded-xl" />
+          </div>
+          <div className="space-y-3">
+            <Skeleton className="h-3 w-32 rounded-md" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <Skeleton key={i} className="h-10 w-full rounded-xl" />
+              ))}
+            </div>
+          </div>
+          <div className="space-y-2">
+            <Skeleton className="h-3 w-40 rounded-md" />
+            <Skeleton className="h-32 w-full rounded-xl" />
+          </div>
+          <Skeleton className="h-14 w-full rounded-full pt-2" />
+        </div>
+      ) : submitted ? (
         <div className="py-16 text-center">
           <CheckCircle2 className="w-16 h-16 text-emerald-400 mx-auto mb-4" />
           <h4 className="text-2xl font-bold text-white mb-2">Request Received!</h4>

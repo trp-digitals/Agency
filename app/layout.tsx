@@ -1,10 +1,8 @@
-import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { defaultMetadata, defaultViewport, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -12,9 +10,6 @@ const inter = Inter({
   display: "swap",
   preload: true,
 });
-
-export const metadata: Metadata = defaultMetadata;
-export const viewport: Viewport = defaultViewport;
 
 export default function RootLayout({
   children,
@@ -24,22 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
-        {/* Organization JSON-LD */}
-        <script
-          type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd),
-          }}
-        />
-        {/* WebSite JSON-LD */}
-        <script
-          type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteJsonLd),
-          }}
-        />
         <SmoothScroll>
           <Navbar />
           {children}

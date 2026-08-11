@@ -1,25 +1,7 @@
-import type { Metadata } from "next";
-import { generatePageMetadata, generateWebPageJsonLd, siteUrl } from "@/lib/seo";
-import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
-import JsonLd from "@/components/JsonLd";
 import MaxWrapper from "@/components/ui/MaxWrapper";
 import { Mail, MapPin, Clock, Send, Sparkles, MessageSquare, Compass, Rocket } from "lucide-react";
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import ContactForm from "@/components/ContactForm";
-
-export const metadata: Metadata = generatePageMetadata({
-  title: "Contact TRP Digitals | Start Your Digital Project",
-  description:
-    "Get in touch with TRP Digitals in Hyderabad. Schedule a free consultation to discuss your web development, mobile app, SaaS, or AI automation project.",
-  path: "/contact",
-});
-
-const webPageJsonLd = generateWebPageJsonLd({
-  title: "Contact TRP Digitals | Start Your Digital Project",
-  description:
-    "Tell us about your project goals and let's build something extraordinary together.",
-  url: `${siteUrl}/contact`,
-});
 
 const timelineSteps = [
   {
@@ -50,11 +32,7 @@ const timelineSteps = [
 
 export default function ContactPage() {
   return (
-    <>
-      <BreadcrumbJsonLd crumbs={[{ name: "Contact", path: "/contact" }]} />
-      <JsonLd id="contact-webpage-jsonld" data={webPageJsonLd} />
-
-      <main className="min-h-screen bg-background pt-28 pb-20 overflow-hidden text-foreground">
+    <main className="min-h-screen bg-background pt-28 pb-20 overflow-hidden text-foreground">
         
         {/* Page Hero */}
         <section className="relative py-16 border-b border-white/5">
@@ -190,6 +168,5 @@ export default function ContactPage() {
       </section>
 
     </main>
-    </>
   );
 }

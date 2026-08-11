@@ -6,7 +6,7 @@ import HeroNetworkDiagram from "./HeroNetworkDiagram";
 export default function Hero() {
   return (
     <section
-      className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-20 overflow-hidden bg-background"
+      className="relative min-h-[90vh] flex items-center justify-center pt-24 sm:pt-28 pb-14 sm:pb-20 overflow-hidden bg-background"
       aria-label="Hero section"
     >
       {/* Background Mesh */}
@@ -17,7 +17,7 @@ export default function Hero() {
       </div>
 
       <MaxWrapper className="relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Column: Text & CTAs (Immediate Server Render) */}
           <div className="lg:col-span-6 flex flex-col items-start text-left fade-in">

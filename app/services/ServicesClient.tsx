@@ -49,7 +49,6 @@ const packages = [
   {
     name: "Launchpad",
     badge: "For Small Businesses",
-    price: "10,000",
     desc: "Everything you need to launch a professional digital presence",
     features: [
       "Upto 5 Pages",
@@ -63,7 +62,6 @@ const packages = [
   {
     name: "Scaleup",
     badge: "For Growing Businesses",
-    price: "16,000",
     desc: "Advanced digital experiences built to generate leads and support growth",
     features: [
       "Everything in Launchpad",
@@ -79,7 +77,6 @@ const packages = [
   {
     name: "Enterprise Growth",
     badge: "For Established Companies",
-    price: "25,000",
     desc: "Custom digital platforms and automation built for ambitious businesses",
     features: [
       "Everything in Scaleup",
@@ -225,13 +222,7 @@ export default function ServicesClient() {
                 <div>
                   <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-2">{pkg.badge}</span>
                   <h3 className="text-2xl font-black text-white mb-2">{pkg.name}</h3>
-                  <p className="text-white/60 text-xs mb-4 leading-relaxed">{pkg.desc}</p>
-
-                  {/* Price display */}
-                  <div className="mb-6 flex items-baseline gap-1">
-                    <span className="text-3xl font-black text-white">₹{pkg.price}</span>
-                    <span className="text-xs text-white/50 font-medium">/ starting</span>
-                  </div>
+                  <p className="text-white/60 text-xs mb-6 leading-relaxed">{pkg.desc}</p>
 
                   <ul className="space-y-3 mb-8">
                     {pkg.features.map((feat, i) => (

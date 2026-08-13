@@ -3,9 +3,16 @@
 import MaxWrapper from "./ui/MaxWrapper";
 import { FaLinkedinIn, FaInstagram, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (pathname && pathname.startsWith("/trp-67.73")) {
+    return null;
+  }
+
   return (
     <footer id="site-footer" className="py-20 border-t border-white/5 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-linear-to-r from-transparent via-primary/30 to-transparent" />
@@ -41,6 +48,7 @@ export default function Footer() {
                 <li><Link href="/" title="TRP Digitals Homepage" className="hover:text-primary transition-colors">Home</Link></li>
                 <li><Link href="/about" title="About TRP Digitals" className="hover:text-primary transition-colors">About Us</Link></li>
                 <li><Link href="/services" title="TRP Digitals Services & Packages" className="hover:text-primary transition-colors">Services</Link></li>
+                {/* <li><Link href="/careers" title="Careers at TRP Digitals" className="hover:text-primary transition-colors">Careers</Link></li> */}
                 <li><Link href="/contact" title="Contact TRP Digitals" className="hover:text-primary transition-colors">Contact Us</Link></li>
               </ul>
             </nav>

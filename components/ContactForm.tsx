@@ -89,6 +89,12 @@ export default function ContactForm() {
     setLoading(true);
     setErrorMessage(null);
 
+    if (selectedServices.length === 0) {
+      setErrorMessage("Please select at least one service needed.");
+      setLoading(false);
+      return;
+    }
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -96,9 +102,9 @@ export default function ContactForm() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phone: formData.phone,
-          projectType: selectedServices.length > 0 ? selectedServices.join(", ") : "General Inquiry",
-          message: formData.message,
+          phoneNumber: formData.phone,
+          servicesNeeded: selectedServices,
+          projectDetails: formData.message,
           bot_trap: botTrap,
         }),
       });

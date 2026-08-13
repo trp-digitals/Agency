@@ -1,0 +1,88 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model CareerApplication {
+  id              String   @id @default(cuid())
+  fullName        String
+  email           String
+  phoneNumber     String?
+  domainsOfInterest String[]
+  portfolioLink   String
+  whyTRPDigitals  String
+  status          ApplicationStatus @default(NEW)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum ApplicationStatus {
+  NEW
+  REVIEWING
+  SHORTLISTED
+  REJECTED
+  ACCEPTED
+}
+
+model ContactSubmission {
+  id             String   @id @default(cuid())
+  name           String
+  email          String
+  phoneNumber    String?
+  servicesNeeded String[]
+  projectDetails String
+  status         ContactStatus @default(NEW)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum ContactStatus {
+  NEW
+  READ
+  IN_PROGRESS
+  REPLIED
+  CLOSED
+}
+
+model AnalyticsVisitor {
+  id          String              @id @default(cuid())
+  visitorId   String              @unique
+  firstSeenAt DateTime            @default(now())
+  lastSeenAt  DateTime            @updatedAt
+  pageViews   AnalyticsPageView[]
+
+  @@index([visitorId])
+  @@index([firstSeenAt])
+}
+
+model AnalyticsPageView {
+  id          String           @id @default(cuid())
+  visitorId   String
+  path        String
+  firstSeenAt DateTime         @default(now())
+  visitor     AnalyticsVisitor @relation(fields: [visitorId], references: [visitorId], onDelete: Cascade)
+
+  @@unique([visitorId, path])
+  @@index([path])
+  @@index([firstSeenAt])
+  @@index([path, firstSeenAt])
+}
+
+

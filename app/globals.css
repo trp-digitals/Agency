@@ -7,7 +7,8 @@
   --color-secondary: #3b82f6;
   --color-accent: #f472b6;
   
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, SFMono-Regular, monospace;
   
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
@@ -56,7 +57,7 @@
   .cta-primary {
     background: linear-gradient(135deg, #c084fc 0%, #3b82f6 100%);
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .cta-primary:hover {

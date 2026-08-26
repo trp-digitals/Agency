@@ -47,14 +47,14 @@ export default function ProblemBentoGrid() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+          <span className="font-mono text-xs font-medium uppercase tracking-widest text-primary mb-3 block">
             WHY TRP DIGITALS EXISTS
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
             Your business deserves better <br />
             <span className="text-gradient">digital solutions.</span>
           </h2>
-          <p className="text-white/60 text-base">
+          <p className="text-white/60 text-base font-normal">
             We make it easier for businesses to build, launch, and grow online without the complexity of managing multiple digital partners.
           </p>
         </motion.div>
@@ -73,13 +73,13 @@ export default function ProblemBentoGrid() {
                 className={`glass-card p-8 rounded-2xl border border-white/10 relative overflow-hidden ${prob.colSpan}`}
               >
                 <div className="flex justify-between items-start mb-6">
-                  <span className="text-2xl font-black text-primary/40 font-mono">{prob.num}</span>
+                  <span className="text-2xl font-mono font-medium text-primary/40">{prob.num}</span>
                   <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-primary">
                     <Icon className="w-5 h-5" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{prob.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{prob.desc}</p>
+                <h3 className="text-xl font-semibold text-white mb-3">{prob.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed font-normal">{prob.desc}</p>
               </motion.div>
             );
           })}

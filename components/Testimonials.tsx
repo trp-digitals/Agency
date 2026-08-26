@@ -74,7 +74,7 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-primary font-bold tracking-widest uppercase text-sm mb-4"
+            className="text-primary font-mono font-medium tracking-widest uppercase text-xs mb-4"
           >
             Client Love
           </motion.div>
@@ -83,7 +83,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-black text-white"
+            className="text-4xl md:text-6xl font-bold text-white"
           >
             What They <span className="text-white/40">Say About Us</span>
           </motion.h2>
@@ -114,13 +114,13 @@ export default function Testimonials() {
                     ))}
                   </div>
                   
-                  <p className="text-xl md:text-3xl font-medium text-white/90 leading-relaxed mb-10 italic max-w-3xl">
+                  <p className="text-xl md:text-2xl font-normal text-white/90 leading-relaxed mb-10 italic max-w-3xl">
                     "{testimonials[index].content}"
                   </p>
                   
                   <div>
-                    <h4 className="text-2xl font-bold text-white mb-1">{testimonials[index].name}</h4>
-                    <p className="text-primary text-sm font-bold tracking-widest uppercase">{testimonials[index].role}</p>
+                    <h4 className="text-xl md:text-2xl font-semibold text-white mb-1">{testimonials[index].name}</h4>
+                    <p className="text-primary font-mono text-xs font-medium tracking-widest uppercase">{testimonials[index].role}</p>
                   </div>
                 </div>
               </div>

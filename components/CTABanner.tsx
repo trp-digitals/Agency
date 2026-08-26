@@ -39,7 +39,7 @@ export default function CTABanner() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary text-sm font-bold mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary font-mono text-xs font-medium uppercase tracking-wider mb-8"
             >
               <Zap className="w-4 h-4" />
               Let's Build Together
@@ -51,7 +51,7 @@ export default function CTABanner() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
             >
               Ready to Launch{" "}
               <span className="text-gradient">Your Next</span>
@@ -65,7 +65,7 @@ export default function CTABanner() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.35 }}
-              className="text-lg md:text-xl text-white/65 max-w-2xl mx-auto leading-loose mb-10"
+              className="text-lg md:text-xl text-white/65 max-w-2xl mx-auto leading-relaxed mb-10 font-normal"
             >
               From a simple landing page to a full-scale SaaS platform — we've got you covered.
               Get a free consultation and project estimate today.
@@ -82,7 +82,7 @@ export default function CTABanner() {
               <Link
                 href="/contact"
                 id="cta-banner-primary"
-                className="group px-10 py-4 min-h-14 rounded-full bg-white text-background font-black text-base flex items-center gap-3 hover:bg-primary hover:text-white transition-all duration-300 shadow-[0_0_40px_rgba(192,132,252,0.25)] hover:shadow-[0_0_60px_rgba(192,132,252,0.5)] hover:scale-105 active:scale-95 w-full sm:w-auto justify-center"
+                className="group px-10 py-4 min-h-14 rounded-full bg-white text-background font-semibold text-base flex items-center gap-3 hover:bg-primary hover:text-white transition-all duration-300 shadow-[0_0_40px_rgba(192,132,252,0.25)] hover:shadow-[0_0_60px_rgba(192,132,252,0.5)] hover:scale-105 active:scale-95 w-full sm:w-auto justify-center"
               >
                 Start for Free
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -92,7 +92,7 @@ export default function CTABanner() {
               <Link
                 href="/services"
                 id="cta-banner-secondary"
-                className="px-8 py-4 min-h-14 rounded-full glass border border-white/20 text-white/80 font-bold hover:bg-white/5 hover:border-white/40 hover:text-white transition-all text-sm flex items-center gap-2 w-full sm:w-auto justify-center"
+                className="px-8 py-4 min-h-14 rounded-full glass border border-white/20 text-white/80 font-semibold hover:bg-white/5 hover:border-white/40 hover:text-white transition-all text-sm flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 Our Services
               </Link>
@@ -104,7 +104,7 @@ export default function CTABanner() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
-              className="mt-6 text-white/35 text-sm font-medium"
+              className="mt-6 text-white/35 font-mono text-xs font-normal"
             >
               5+ projects delivered · Hyderabad, India · Reply within 24hrs
             </motion.p>

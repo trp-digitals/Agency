@@ -26,16 +26,16 @@ export default function IdeaBanner() {
           className="glass-card p-10 sm:p-16 rounded-3xl border border-primary/30 relative overflow-hidden text-center bg-linear-to-br from-primary/10 via-background to-secondary/10 shadow-[0_0_50px_rgba(192,132,252,0.15)]"
         >
           {/* Ambient Glow Pill */}
-          <span className="text-xs font-bold uppercase tracking-widest text-primary mb-4 inline-block px-4 py-1.5 rounded-full glass border-primary/20">
+          <span className="font-mono text-xs font-medium uppercase tracking-widest text-primary mb-4 inline-block px-4 py-1.5 rounded-full glass border-primary/20">
             LET&apos;S WORK TOGETHER
           </span>
 
-          <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight mb-6">
+          <h2 className="text-3xl sm:text-5xl font-bold text-white leading-tight mb-6">
             Have a project in mind? <br />
             <span className="text-gradient">Let&apos;s build it together.</span>
           </h2>
 
-          <p className="max-w-2xl mx-auto text-white/70 text-base leading-relaxed mb-10">
+          <p className="max-w-2xl mx-auto text-white/70 text-base leading-relaxed mb-10 font-normal">
             Tell us what you&apos;re looking to build. We&apos;ll help you choose the right digital solution and turn your idea into something your customers can use.
           </p>
 
@@ -55,7 +55,7 @@ export default function IdeaBanner() {
           {/* CTA */}
           <Link
             href="/contact"
-            className="cta-primary inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full text-base font-bold transition-all hover:scale-105 shadow-[0_0_40px_rgba(192,132,252,0.4)]"
+            className="cta-primary inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full text-base font-semibold transition-all hover:scale-105 shadow-[0_0_40px_rgba(192,132,252,0.4)]"
           >
             <span>Start Your Project</span>
             <ArrowRight className="w-5 h-5" />

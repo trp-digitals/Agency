@@ -126,10 +126,10 @@ export default function HeroNetworkDiagram() {
 
         {/* Central Brand Lockup */}
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center z-10">
-          <span className="text-lg min-[400px]:text-xl sm:text-2xl font-black tracking-tight text-white drop-shadow-[0_0_12px_rgba(192,132,252,0.4)]">
+          <span className="text-lg min-[400px]:text-xl sm:text-2xl font-bold tracking-tight text-white drop-shadow-[0_0_12px_rgba(192,132,252,0.4)]">
             TRP
           </span>
-          <span className="text-[9px] min-[400px]:text-[10px] sm:text-xs font-extrabold tracking-widest text-gradient uppercase">
+          <span className="text-[9px] min-[400px]:text-[10px] sm:text-xs font-mono font-medium tracking-widest text-gradient uppercase">
             DIGITALS
           </span>
         </div>
@@ -141,10 +141,10 @@ export default function HeroNetworkDiagram() {
             className={`absolute z-20 flex flex-col pointer-events-auto cursor-pointer group ${svc.badgePos}`}
           >
             <div className="glass px-2 py-1 min-[400px]:px-2.5 min-[400px]:py-1.2 sm:px-3 sm:py-1.5 rounded-lg sm:rounded-xl border border-primary/30 bg-[#0c0c14]/90 shadow-xl backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(192,132,252,0.4)]">
-              <p className="text-[8.5px] min-[400px]:text-[9.5px] sm:text-[11px] font-extrabold tracking-wider text-white whitespace-nowrap">
+              <p className="text-[8.5px] min-[400px]:text-[9.5px] sm:text-[11px] font-semibold tracking-normal text-white whitespace-nowrap">
                 {svc.title}
               </p>
-              <p className="text-[7px] min-[400px]:text-[8px] sm:text-[9px] font-medium text-white/60 whitespace-nowrap">
+              <p className="text-[7px] min-[400px]:text-[8px] sm:text-[9px] font-normal text-white/60 whitespace-nowrap">
                 {svc.subtitle}
               </p>
             </div>

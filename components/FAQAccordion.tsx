@@ -46,10 +46,10 @@ export default function FAQAccordion() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+          <span className="font-mono text-xs font-medium uppercase tracking-widest text-primary mb-3 block">
             FREQUENTLY ASKED QUESTIONS
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
             Everything you need to know <br />
             <span className="text-gradient">before getting started.</span>
           </h2>
@@ -74,7 +74,7 @@ export default function FAQAccordion() {
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-white hover:text-primary transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-base sm:text-lg text-white hover:text-primary transition-colors"
                 >
                   <span>{faq.q}</span>
                   <ChevronDown className={`w-5 h-5 text-primary shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
@@ -90,7 +90,7 @@ export default function FAQAccordion() {
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="px-6 pb-6 text-white/60 text-sm leading-relaxed border-t border-white/5 pt-4">
+                      <div className="px-6 pb-6 text-white/60 text-sm leading-relaxed border-t border-white/5 pt-4 font-normal">
                         {faq.a}
                       </div>
                     </motion.div>

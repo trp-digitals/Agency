@@ -104,17 +104,17 @@ export default function ServicesClient() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl text-left"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary font-mono text-xs font-medium uppercase tracking-wider mb-6">
               <Sparkles className="w-3.5 h-3.5" />
               <span>FULL SERVICE CATALOG</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Everything Digital. <br />
               <span className="text-gradient">Built for Your Business.</span>
             </h1>
 
-            <p className="text-white/70 text-lg sm:text-xl font-medium leading-relaxed max-w-2xl">
+            <p className="text-white/70 text-lg sm:text-xl font-normal leading-relaxed max-w-2xl">
               From websites and mobile apps to SaaS, e-commerce, AI automation, and digital marketing — TRP Digitals provides the digital solutions your business needs to build, launch, and grow.
             </p>
           </motion.div>
@@ -131,10 +131,10 @@ export default function ServicesClient() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+            <span className="font-mono text-xs font-medium uppercase tracking-widest text-primary mb-3 block">
               What We Build
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
               Our core digital <span className="text-gradient">capabilities.</span>
             </h2>
           </motion.div>
@@ -156,12 +156,12 @@ export default function ServicesClient() {
                       <Icon className="w-6 h-6" />
                     </div>
 
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{svc.title}</h3>
-                    <p className="text-white/60 text-xs leading-relaxed mb-6">{svc.desc}</p>
+                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-primary transition-colors">{svc.title}</h3>
+                    <p className="text-white/60 text-xs leading-relaxed mb-6 font-normal">{svc.desc}</p>
 
                     <ul className="space-y-2.5 mb-6 mt-auto">
                       {svc.bullets.map((b, i) => (
-                        <li key={i} className="text-xs text-white/80 flex items-start gap-2.5">
+                        <li key={i} className="text-xs text-white/80 flex items-start gap-2.5 font-normal">
                           <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                           <span>{b}</span>
                         </li>
@@ -171,7 +171,7 @@ export default function ServicesClient() {
 
                   <Link
                     href="/contact"
-                    className="cta-primary w-full py-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-2 mt-4 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                    className="cta-primary w-full py-3 rounded-xl text-xs font-semibold text-center inline-flex items-center justify-center gap-2 mt-4 hover:scale-[1.02] active:scale-[0.98] transition-all"
                   >
                     <span>Discuss Project</span>
                     <ArrowRight className="w-4 h-4" />
@@ -193,10 +193,10 @@ export default function ServicesClient() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+            <span className="font-mono text-xs font-medium uppercase tracking-widest text-primary mb-3 block">
               Multi-Service Packages
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
               One partner. <span className="text-gradient">Three ways to scale.</span>
             </h2>
           </motion.div>
@@ -214,19 +214,19 @@ export default function ServicesClient() {
                 }`}
               >
                 {pkg.popular && (
-                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-wider shadow-lg">
+                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-white font-mono text-[10px] font-semibold uppercase tracking-wider shadow-lg">
                     Recommended
                   </span>
                 )}
 
                 <div>
-                  <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-2">{pkg.badge}</span>
-                  <h3 className="text-2xl font-black text-white mb-2">{pkg.name}</h3>
-                  <p className="text-white/60 text-xs mb-6 leading-relaxed">{pkg.desc}</p>
+                  <span className="font-mono text-xs font-medium text-primary uppercase tracking-wider block mb-2">{pkg.badge}</span>
+                  <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
+                  <p className="text-white/60 text-xs mb-6 leading-relaxed font-normal">{pkg.desc}</p>
 
                   <ul className="space-y-3 mb-8">
                     {pkg.features.map((feat, i) => (
-                      <li key={i} className="text-xs text-white/80 flex items-center gap-2.5">
+                      <li key={i} className="text-xs text-white/80 flex items-center gap-2.5 font-normal">
                         <Check className="w-4 h-4 text-primary shrink-0" />
                         <span>{feat}</span>
                       </li>
@@ -236,7 +236,7 @@ export default function ServicesClient() {
 
                 <Link
                   href="/contact"
-                  className={`w-full py-4 rounded-full text-xs font-bold text-center flex items-center justify-center gap-2 ${
+                  className={`w-full py-4 rounded-full text-xs font-semibold text-center flex items-center justify-center gap-2 ${
                     pkg.popular ? "cta-primary" : "glass border border-white/20 text-white hover:bg-white/10"
                   }`}
                 >

@@ -40,19 +40,19 @@ export default function ServiceModel() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6"
           >
-            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+            <span className="font-mono text-xs font-medium uppercase tracking-widest text-primary mb-3 block">
               THE TRP DIGITALS DIFFERENCE
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
               More than a service. <br />
               <span className="text-gradient">A partner for your growth.</span>
             </h2>
-            <p className="text-white/60 text-base leading-relaxed mb-8">
+            <p className="text-white/60 text-base leading-relaxed mb-8 font-normal">
               TRP Digitals brings design, development, AI, e-commerce, and digital growth together under one team—so you can focus on your business while we handle the digital side.
             </p>
             <Link
               href="/contact"
-              className="cta-primary inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-bold transition-all hover:scale-105"
+              className="cta-primary inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all hover:scale-105"
             >
               <span>Start Your Project</span>
               <ArrowRight className="w-4 h-4" />
@@ -73,8 +73,8 @@ export default function ServiceModel() {
                 <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary mb-4">
                   <Check className="w-4 h-4" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-white/60 text-xs leading-relaxed">{item.desc}</p>
+                <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-white/60 text-xs leading-relaxed font-normal">{item.desc}</p>
               </motion.div>
             ))}
           </div>

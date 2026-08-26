@@ -22,10 +22,10 @@ export default function Footer() {
             <Link href="/" className="mb-4 block w-fit">
               <Logo />
             </Link>
-            <p className="text-sm font-bold tracking-widest text-primary uppercase mb-3">
+            <p className="font-mono text-xs font-medium tracking-widest text-primary uppercase mb-3">
               BUILD. <span className="text-secondary">LAUNCH.</span> GROW.
             </p>
-            <p className="max-w-sm text-foreground/60 leading-relaxed text-sm mb-8">
+            <p className="max-w-sm text-foreground/60 leading-relaxed text-sm mb-8 font-normal">
               Digital solutions for businesses ready to build a stronger online presence.
             </p>
             <div className="flex gap-4">
@@ -42,9 +42,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-6 text-white text-sm tracking-wider uppercase">Navigate</h3>
+            <h3 className="font-mono text-xs font-semibold mb-6 text-white tracking-wider uppercase">Navigate</h3>
             <nav aria-label="Footer Navigation">
-              <ul className="flex flex-col gap-3 text-sm text-foreground/60">
+              <ul className="flex flex-col gap-3 text-sm font-normal text-foreground/60">
                 <li><Link href="/" title="TRP Digitals Homepage" className="hover:text-primary transition-colors">Home</Link></li>
                 <li><Link href="/about" title="About TRP Digitals" className="hover:text-primary transition-colors">About Us</Link></li>
                 <li><Link href="/services" title="TRP Digitals Services & Packages" className="hover:text-primary transition-colors">Services</Link></li>
@@ -55,8 +55,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-white text-sm tracking-wider uppercase">Get in Touch</h4>
-            <ul className="flex flex-col gap-3 text-sm text-foreground/60">
+            <h4 className="font-mono text-xs font-semibold mb-6 text-white tracking-wider uppercase">Get in Touch</h4>
+            <ul className="flex flex-col gap-3 text-sm font-normal text-foreground/60">
               <li className="flex items-center gap-2">
                 <FaEnvelope className="text-primary shrink-0" size={15} />
                 <a href="mailto:trpdigitals.dev@gmail.com" className="hover:text-primary transition-colors">
@@ -65,12 +65,12 @@ export default function Footer() {
               </li>
               <li>+91 9063851105</li>
               <li>Hyderabad, India</li>
-              <li className="text-xs text-white/40 pt-2">Response SLA: Within 24 Hours</li>
+              <li className="font-mono text-xs text-white/40 pt-2">Response SLA: Within 24 Hours</li>
             </ul>
           </div>
         </div>
         
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-foreground/40 font-medium">
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-xs text-foreground/40 font-normal">
           <p>© 2026 TRP Digitals. All rights reserved.</p>
           <div className="flex gap-8">
             <Link href="/privacy" className="hover:text-foreground/60">Privacy Policy</Link>

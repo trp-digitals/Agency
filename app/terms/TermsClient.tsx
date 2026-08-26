@@ -81,7 +81,7 @@ export default function TermsClient() {
             <div className="sticky top-40 space-y-6">
               <div className="flex items-center gap-2 text-primary mb-8 px-2">
                 <FileText className="w-5 h-5" aria-hidden="true" />
-                <span className="font-black uppercase tracking-widest text-xs">Agreement Sections</span>
+                <span className="font-mono font-medium uppercase tracking-widest text-xs">Agreement Sections</span>
               </div>
               <nav className="flex flex-col gap-2" aria-label="Terms of service sections">
                 {sections.map((section) => (
@@ -90,7 +90,7 @@ export default function TermsClient() {
                     onClick={() => scrollToSection(section.id)}
                     aria-label={`Jump to ${section.title.split(". ")[1]}`}
                     className={cn(
-                      "flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all text-left group",
+                      "flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all text-left group",
                       activeSection === section.id 
                         ? "bg-secondary/10 text-secondary shadow-lg shadow-secondary/5" 
                         : "text-white/40 hover:text-white hover:bg-white/5"
@@ -114,19 +114,19 @@ export default function TermsClient() {
               animate={{ opacity: 1, y: 0 }}
               className="mb-16"
             >
-              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 Terms of <span className="text-white/40">Service</span>
               </h1>
-              <div className="flex flex-wrap items-center gap-6 text-foreground/50 font-medium">
-                <p className="text-xl">Clear terms for a transparent collaboration.</p>
-                <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs">
+              <div className="flex flex-wrap items-center gap-6 text-foreground/60 font-normal">
+                <p className="text-lg sm:text-xl">Clear terms for a transparent collaboration.</p>
+                <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/5 rounded-full font-mono text-xs text-white/50">
                   <Clock className="w-3 h-3" aria-hidden="true" />
                   <span>Last Updated: March 18, 2026</span>
                 </div>
               </div>
             </motion.div>
 
-            <div className="space-y-24 prose prose-invert prose-p:text-xl prose-p:text-foreground/60 prose-p:leading-relaxed prose-headings:font-black prose-headings:tracking-tight prose-headings:text-white">
+            <div className="space-y-24 prose prose-invert prose-p:text-base sm:prose-p:text-lg prose-p:text-foreground/70 prose-p:leading-relaxed prose-p:font-normal prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-white">
               <section id="introduction" className="scroll-mt-40">
                 <h2>1. Introduction</h2>
                 <p>
@@ -231,21 +231,21 @@ export default function TermsClient() {
                 </p>
                 <div className="glass p-12 rounded-[3rem] border-white/5 not-prose relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl -z-10 group-hover:bg-primary/20 transition-colors" />
-                  <h3 className="text-3xl font-black text-white mb-6">Have questions?</h3>
-                  <p className="text-foreground/60 text-lg mb-8 leading-relaxed max-w-md">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Have questions?</h3>
+                  <p className="text-foreground/60 text-base sm:text-lg mb-8 leading-relaxed max-w-md font-normal">
                     Our team is here to provide clarity on our terms and collaboration process. Reach out anytime.
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <Link 
                       href="/contact"
-                      className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white text-background font-bold hover:bg-primary hover:text-white transition-all group/btn"
+                      className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white text-background font-semibold hover:bg-primary hover:text-white transition-all group/btn"
                     >
                       Contact Us
                       <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                     <a 
                       href="mailto:trpdigitals.dev@gmail.com"
-                      className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl glass border-white/10 text-white font-bold hover:bg-white/10 transition-all"
+                      className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl glass border-white/10 text-white font-semibold hover:bg-white/10 transition-all"
                     >
                       <Mail className="w-5 h-5" aria-hidden="true" />
                       Email Us

@@ -43,9 +43,9 @@ function AnimatedCounter({
   }, [inView, value]);
 
   return (
-    <span className={cn("text-5xl md:text-6xl font-black tabular-nums", color)}>
+    <span className={cn("text-5xl md:text-6xl font-mono font-semibold tabular-nums", color)}>
       {count}
-      <span className="text-3xl md:text-4xl">{suffix}</span>
+      <span className="text-3xl md:text-4xl font-mono font-medium">{suffix}</span>
     </span>
   );
 }
@@ -79,7 +79,7 @@ export default function StatsStrip() {
                 color={stat.color}
                 inView={inView}
               />
-              <p className="text-white/60 text-sm md:text-base font-medium leading-snug">
+              <p className="text-white/60 text-sm md:text-base font-normal leading-snug">
                 {stat.label}
               </p>
               {/* Thin accent line */}

@@ -43,14 +43,14 @@ export default function ClientsGrid() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+          <span className="font-mono text-xs font-medium uppercase tracking-widest text-primary mb-3 block">
             WHO WE WORK WITH
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
             Digital solutions for <br />
             <span className="text-gradient">businesses at every stage.</span>
           </h2>
-          <p className="text-white/60 text-base">
+          <p className="text-white/60 text-base font-normal">
             Whether you&apos;re starting from scratch or ready to scale, we build digital solutions around where your business is today and where you want to go next.
           </p>
         </motion.div>
@@ -70,13 +70,13 @@ export default function ClientsGrid() {
               >
                 <div>
                   <div className="flex justify-between items-start mb-6">
-                    <span className="text-2xl font-black text-primary/40 font-mono">{vert.num}</span>
+                    <span className="text-2xl font-mono font-medium text-primary/40">{vert.num}</span>
                     <div className="w-12 h-12 rounded-xl bg-linear-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center text-primary shrink-0">
                       <Icon className="w-6 h-6" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{vert.title}</h3>
-                  <p className="text-white/60 text-xs leading-relaxed">{vert.desc}</p>
+                  <h3 className="text-xl font-semibold text-white mb-3">{vert.title}</h3>
+                  <p className="text-white/60 text-xs leading-relaxed font-normal">{vert.desc}</p>
                 </div>
               </motion.div>
             );

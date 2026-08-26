@@ -134,9 +134,9 @@ export default function ContactForm() {
   return (
     <div className="glass-card p-8 sm:p-10 rounded-3xl border border-primary/20 relative">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-2xl font-bold text-white">Start a Conversation</h3>
+        <h3 className="text-2xl font-semibold text-white">Start a Conversation</h3>
         {draftSavedStatus && !submitted && isLoaded && (
-          <span className="text-[11px] font-semibold tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+          <span className="font-mono text-[11px] font-medium tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
             {draftSavedStatus}
           </span>
@@ -176,8 +176,8 @@ export default function ContactForm() {
       ) : submitted ? (
         <div className="py-16 text-center">
           <CheckCircle2 className="w-16 h-16 text-emerald-400 mx-auto mb-4" />
-          <h4 className="text-2xl font-bold text-white mb-2">Request Received!</h4>
-          <p className="text-white/60 text-sm max-w-md mx-auto">
+          <h4 className="text-2xl font-semibold text-white mb-2">Request Received!</h4>
+          <p className="text-white/60 text-sm max-w-md mx-auto font-normal">
             Thank you for reaching out. Our team will get back to you soon.
           </p>
         </div>
@@ -195,7 +195,7 @@ export default function ContactForm() {
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-white/60 mb-2">
+              <label className="block font-mono text-xs font-medium uppercase tracking-wider text-white/60 mb-2">
                 Your Name <span className="text-primary">*</span>
               </label>
               <input
@@ -204,11 +204,11 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="John Doe"
-                className="w-full px-4 py-3 rounded-xl glass border border-white/10 text-white placeholder-white/30 focus:border-primary focus:outline-none text-sm"
+                className="w-full px-4 py-3 rounded-xl glass border border-white/10 text-white placeholder-white/30 focus:border-primary focus:outline-none text-sm font-normal"
               />
             </div>
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-white/60 mb-2">
+              <label className="block font-mono text-xs font-medium uppercase tracking-wider text-white/60 mb-2">
                 Email Address <span className="text-primary">*</span>
               </label>
               <input
@@ -217,13 +217,13 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="john@company.com"
-                className="w-full px-4 py-3 rounded-xl glass border border-white/10 text-white placeholder-white/30 focus:border-primary focus:outline-none text-sm"
+                className="w-full px-4 py-3 rounded-xl glass border border-white/10 text-white placeholder-white/30 focus:border-primary focus:outline-none text-sm font-normal"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-white/60 mb-2">
+            <label className="block font-mono text-xs font-medium uppercase tracking-wider text-white/60 mb-2">
               Phone Number
             </label>
             <input
@@ -231,14 +231,14 @@ export default function ContactForm() {
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               placeholder="+91 98765 43210"
-              className="w-full px-4 py-3 rounded-xl glass border border-white/10 text-white placeholder-white/30 focus:border-primary focus:outline-none text-sm"
+              className="w-full px-4 py-3 rounded-xl glass border border-white/10 text-white placeholder-white/30 focus:border-primary focus:outline-none text-sm font-normal"
             />
           </div>
 
           {/* Services Multi-Select */}
           <fieldset>
-            <legend className="block text-xs font-bold uppercase tracking-wider text-white/60 mb-3">
-              Services Needed <span className="text-white/40">(select all that apply)</span>
+            <legend className="block font-mono text-xs font-medium uppercase tracking-wider text-white/60 mb-3">
+              Services Needed <span className="text-white/40 font-normal">(select all that apply)</span>
             </legend>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {serviceOptions.map((svc, idx) => {
@@ -249,10 +249,10 @@ export default function ContactForm() {
                     key={idx}
                     aria-pressed={isSelected}
                     onClick={() => toggleService(svc)}
-                    className={`px-3.5 py-2.5 rounded-xl border text-left text-xs font-medium transition-all flex items-center justify-between ${
+                    className={`px-3.5 py-2.5 rounded-xl border text-left text-xs transition-all flex items-center justify-between ${
                       isSelected
-                        ? "border-primary bg-primary/10 text-white"
-                        : "border-white/10 glass text-white/60 hover:text-white"
+                        ? "border-primary bg-primary/10 text-white font-medium"
+                        : "border-white/10 glass text-white/60 hover:text-white font-normal"
                     }`}
                   >
                     <span>{svc}</span>
@@ -265,7 +265,7 @@ export default function ContactForm() {
 
           {/* Message Area */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-white/60 mb-2">
+            <label className="block font-mono text-xs font-medium uppercase tracking-wider text-white/60 mb-2">
               TELL US ABOUT YOUR PROJECT <span className="text-primary">*</span>
             </label>
             <textarea
@@ -274,12 +274,12 @@ export default function ContactForm() {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               placeholder="Tell us about your business, what you want to build, your goals, and any important requirements..."
-              className="w-full px-4 py-3 rounded-xl glass border border-white/10 text-white placeholder-white/30 focus:border-primary focus:outline-none text-sm"
+              className="w-full px-4 py-3 rounded-xl glass border border-white/10 text-white placeholder-white/30 focus:border-primary focus:outline-none text-sm font-normal"
             />
           </div>
 
           {errorMessage && (
-            <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-medium text-center">
+            <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-normal text-center">
               {errorMessage}
             </div>
           )}
@@ -287,7 +287,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={loading}
-            className="cta-primary w-full py-4 rounded-full text-sm font-bold text-center flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform disabled:opacity-50"
+            className="cta-primary w-full py-4 rounded-full text-sm font-semibold text-center flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform disabled:opacity-50"
           >
             {loading ? (
               <span>Sending Request...</span>
@@ -298,7 +298,7 @@ export default function ContactForm() {
               </>
             )}
           </button>
-          <p className="text-[11px] text-white/40 text-center">We respect your privacy. No spam ever.</p>
+          <p className="text-[11px] font-normal text-white/40 text-center">We respect your privacy. No spam ever.</p>
         </form>
       )}
     </div>

@@ -79,7 +79,7 @@ export default function PrivacyClient() {
             <div className="sticky top-40 space-y-6">
               <div className="flex items-center gap-2 text-primary mb-8 px-2">
                 <Shield className="w-5 h-5" aria-hidden="true" />
-                <span className="font-black uppercase tracking-widest text-xs">Navigation</span>
+                <span className="font-mono font-medium uppercase tracking-widest text-xs">Navigation</span>
               </div>
               <nav className="flex flex-col gap-2" aria-label="Privacy policy sections">
                 {sections.map((section) => (
@@ -88,7 +88,7 @@ export default function PrivacyClient() {
                     onClick={() => scrollToSection(section.id)}
                     aria-label={`Jump to ${section.title.split(". ")[1]}`}
                     className={cn(
-                      "flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all text-left group",
+                      "flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all text-left group",
                       activeSection === section.id 
                         ? "bg-secondary/10 text-secondary shadow-lg shadow-secondary/5" 
                         : "text-white/40 hover:text-white hover:bg-white/5"
@@ -112,19 +112,19 @@ export default function PrivacyClient() {
               animate={{ opacity: 1, y: 0 }}
               className="mb-16"
             >
-              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 Privacy <span className="text-white/40">Policy</span>
               </h1>
-              <div className="flex flex-wrap items-center gap-6 text-foreground/50 font-medium">
-                <p className="text-xl">Your data, handled with transparency and care.</p>
-                <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs">
+              <div className="flex flex-wrap items-center gap-6 text-foreground/60 font-normal">
+                <p className="text-lg sm:text-xl">Your data, handled with transparency and care.</p>
+                <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/5 rounded-full font-mono text-xs text-white/50">
                   <Clock className="w-3 h-3" aria-hidden="true" />
                   <span>Last Updated: March 18, 2026</span>
                 </div>
               </div>
             </motion.div>
 
-            <div className="space-y-24 prose prose-invert prose-p:text-xl prose-p:text-foreground/60 prose-p:leading-relaxed prose-headings:font-black prose-headings:tracking-tight prose-headings:text-white">
+            <div className="space-y-24 prose prose-invert prose-p:text-base sm:prose-p:text-lg prose-p:text-foreground/70 prose-p:leading-relaxed prose-p:font-normal prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-white">
               <section id="introduction" className="scroll-mt-40">
                 <h2>1. Introduction</h2>
                 <p>
@@ -211,10 +211,10 @@ export default function PrivacyClient() {
                   If you have any questions about this Privacy Policy, please contact us:
                 </p>
                 <div className="glass p-8 rounded-3xl border-white/5 not-prose">
-                  <p className="text-white font-bold mb-2">Email</p>
-                  <p className="text-primary text-xl font-bold mb-6">trpdigitals.dev@gmail.com</p>
-                  <p className="text-white font-bold mb-2">Address</p>
-                  <p className="text-foreground/60 text-lg">Hyderabad, Telangana, India</p>
+                  <p className="font-mono text-xs font-medium uppercase tracking-wider text-white/50 mb-1">Email</p>
+                  <p className="text-primary text-lg sm:text-xl font-semibold mb-6">trpdigitals.dev@gmail.com</p>
+                  <p className="font-mono text-xs font-medium uppercase tracking-wider text-white/50 mb-1">Address</p>
+                  <p className="text-foreground/70 text-base sm:text-lg font-normal">Hyderabad, Telangana, India</p>
                 </div>
               </section>
             </div>

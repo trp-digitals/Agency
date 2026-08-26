@@ -37,14 +37,14 @@ export default function Process() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+          <span className="font-mono text-xs font-medium uppercase tracking-widest text-primary mb-3 block">
             HOW IT WORKS
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
             From idea to launch. <br />
             <span className="text-gradient">Simple. Transparent.</span>
           </h2>
-          <p className="text-white/60 text-base">
+          <p className="text-white/60 text-base font-normal">
             A straightforward process designed to take your idea from the first conversation to a finished digital product.
           </p>
         </motion.div>
@@ -63,14 +63,14 @@ export default function Process() {
                 className="glass-card p-8 rounded-2xl border border-white/10 relative flex flex-col"
               >
                 <div className="flex justify-between items-center mb-6">
-                  <span className="text-3xl font-black text-primary font-mono">{step.num}</span>
+                  <span className="text-3xl font-mono font-medium text-primary">{step.num}</span>
                   <div className="w-12 h-12 rounded-xl bg-linear-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center text-primary">
                     <Icon className="w-6 h-6" />
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{step.desc}</p>
+                <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed font-normal">{step.desc}</p>
               </motion.div>
             );
           })}

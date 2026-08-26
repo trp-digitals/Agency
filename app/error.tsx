@@ -27,7 +27,7 @@ export default function GlobalError({
           margin: 0,
           backgroundColor: "#0a0a0a",
           fontFamily:
-            "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+            "var(--font-archivo), ui-sans-serif, system-ui, sans-serif",
         }}
       >
         <main
@@ -44,9 +44,10 @@ export default function GlobalError({
             <p
               style={{
                 color: "#c084fc",
-                fontSize: "14px",
-                fontWeight: 700,
-                letterSpacing: "4px",
+                fontSize: "13px",
+                fontWeight: 500,
+                fontFamily: "var(--font-ibm-plex-mono), monospace",
+                letterSpacing: "3px",
                 textTransform: "uppercase",
                 marginBottom: "16px",
               }}
@@ -59,8 +60,9 @@ export default function GlobalError({
               style={{
                 color: "#ffffff",
                 fontSize: "clamp(2rem, 5vw, 3.5rem)",
-                fontWeight: 900,
-                lineHeight: 1.1,
+                fontWeight: 700,
+                lineHeight: 1.15,
+                letterSpacing: "-0.02em",
                 marginBottom: "16px",
               }}
             >
@@ -70,9 +72,10 @@ export default function GlobalError({
             {/* Description */}
             <p
               style={{
-                color: "rgba(255,255,255,0.4)",
-                fontSize: "18px",
+                color: "rgba(255,255,255,0.6)",
+                fontSize: "17px",
                 lineHeight: 1.6,
+                fontWeight: 400,
                 marginBottom: "12px",
               }}
             >
@@ -86,7 +89,7 @@ export default function GlobalError({
                 style={{
                   color: "rgba(255,255,255,0.2)",
                   fontSize: "12px",
-                  fontFamily: "monospace",
+                  fontFamily: "var(--font-ibm-plex-mono), monospace",
                   marginBottom: "40px",
                 }}
               >
@@ -110,8 +113,8 @@ export default function GlobalError({
                   borderRadius: "16px",
                   backgroundColor: "#ffffff",
                   color: "#0a0a0a",
-                  fontWeight: 700,
-                  fontSize: "16px",
+                  fontWeight: 600,
+                  fontSize: "15px",
                   border: "none",
                   cursor: "pointer",
                 }}
@@ -125,8 +128,8 @@ export default function GlobalError({
                   borderRadius: "16px",
                   backgroundColor: "rgba(255,255,255,0.05)",
                   color: "#ffffff",
-                  fontWeight: 700,
-                  fontSize: "16px",
+                  fontWeight: 600,
+                  fontSize: "15px",
                   border: "1px solid rgba(255,255,255,0.1)",
                   textDecoration: "none",
                 }}

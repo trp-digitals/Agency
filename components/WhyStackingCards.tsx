@@ -45,14 +45,14 @@ export default function WhyStackingCards() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 lg:sticky lg:top-32"
           >
-            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+            <span className="font-mono text-xs font-medium uppercase tracking-widest text-primary mb-3 block">
               WHY TRP DIGITALS
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
               Built to turn ideas into <br />
               <span className="text-gradient">digital growth.</span>
             </h2>
-            <p className="text-white/60 text-base leading-relaxed mb-8">
+            <p className="text-white/60 text-base leading-relaxed mb-8 font-normal">
               From your first website to custom apps, SaaS platforms, AI solutions, and digital marketing, TRP Digitals gives you one team to design, build, and grow your digital presence.
             </p>
           </motion.div>
@@ -75,8 +75,8 @@ export default function WhyStackingCards() {
                       <Icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-2">{card.title}</h3>
-                      <p className="text-white/60 text-sm leading-relaxed">{card.desc}</p>
+                      <h3 className="text-xl font-semibold text-white mb-2">{card.title}</h3>
+                      <p className="text-white/60 text-sm leading-relaxed font-normal">{card.desc}</p>
                     </div>
                   </div>
                 </motion.div>

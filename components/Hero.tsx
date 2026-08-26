@@ -22,19 +22,19 @@ export default function Hero() {
           {/* Left Column: Text & CTAs (Immediate Server Render) */}
           <div className="lg:col-span-6 flex flex-col items-start text-left fade-in">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary font-mono text-xs font-medium uppercase tracking-wider mb-6">
               <Sparkles className="w-3.5 h-3.5" />
               <span>DIGITAL SOLUTIONS AGENCY</span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.15] text-white">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.15] text-white">
               Built Digital. <br />
               <span className="text-gradient">Grow Smarter.</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg text-white/70 mb-8 font-medium leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-white/70 mb-8 font-normal leading-relaxed max-w-xl">
               We design and build high-performance websites, apps, digital platforms, and AI-powered solutions — helping businesses launch, grow, and scale.
             </p>
 
@@ -42,7 +42,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8">
               <Link
                 href="/contact"
-                className="cta-primary px-8 py-4 rounded-full text-sm font-bold flex items-center justify-center gap-2 transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(192,132,252,0.3)]"
+                className="cta-primary px-8 py-4 rounded-full text-sm font-semibold flex items-center justify-center gap-2 transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(192,132,252,0.3)]"
               >
                 <span>Start Your Project</span>
                 <ArrowRight className="w-4 h-4" />
@@ -57,7 +57,7 @@ export default function Hero() {
             </div>
 
             {/* Trust Signal */}
-            <div className="flex items-center gap-2 text-white/40 text-xs font-medium">
+            <div className="flex items-center gap-2 text-white/40 text-xs font-normal">
               <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>100% Code Ownership &middot; Single Accountable Lead &middot; Rapid Sprints</span>
             </div>

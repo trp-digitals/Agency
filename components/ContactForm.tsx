@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Check } from "lucide-react";
 import Skeleton from "@/components/ui/Skeleton";
 
 const serviceOptions = [
@@ -134,7 +134,7 @@ export default function ContactForm() {
   return (
     <div className="glass-card p-8 sm:p-10 rounded-3xl border border-primary/20 relative">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-2xl font-semibold text-white">Start a Conversation</h3>
+        <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">Start a Conversation</h3>
         {draftSavedStatus && !submitted && isLoaded && (
           <span className="font-mono text-[11px] font-medium tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -240,7 +240,7 @@ export default function ContactForm() {
             <legend className="block font-mono text-xs font-medium uppercase tracking-wider text-white/60 mb-3">
               Services Needed <span className="text-white/40 font-normal">(select all that apply)</span>
             </legend>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {serviceOptions.map((svc, idx) => {
                 const isSelected = selectedServices.includes(svc);
                 return (
@@ -249,14 +249,22 @@ export default function ContactForm() {
                     key={idx}
                     aria-pressed={isSelected}
                     onClick={() => toggleService(svc)}
-                    className={`px-3.5 py-2.5 rounded-xl border text-left text-xs transition-all flex items-center justify-between ${
+                    className={`px-4 py-3 rounded-xl border text-left text-xs transition-all flex items-center justify-between cursor-pointer ${
                       isSelected
-                        ? "border-primary bg-primary/10 text-white font-medium"
-                        : "border-white/10 glass text-white/60 hover:text-white font-normal"
+                        ? "border-primary bg-primary/20 text-white font-semibold shadow-[0_0_15px_rgba(192,132,252,0.2)]"
+                        : "border-white/10 glass text-white/70 hover:text-white hover:border-white/20 font-normal"
                     }`}
                   >
                     <span>{svc}</span>
-                    {isSelected && <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" />}
+                    <span
+                      className={`w-4 h-4 rounded-md flex items-center justify-center border transition-all shrink-0 ${
+                        isSelected
+                          ? "bg-primary border-primary text-black"
+                          : "border-white/30 bg-white/5"
+                      }`}
+                    >
+                      {isSelected && <Check className="w-3 h-3 text-black stroke-[3]" />}
+                    </span>
                   </button>
                 );
               })}
@@ -298,7 +306,7 @@ export default function ContactForm() {
               </>
             )}
           </button>
-          <p className="text-[11px] font-normal text-white/40 text-center">We respect your privacy. No spam ever.</p>
+          <p className="text-xs font-normal text-white/50 text-center">We respect your privacy. No spam ever.</p>
         </form>
       )}
     </div>

@@ -68,13 +68,13 @@ export default function ServiceModel() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="glass-card p-6 rounded-2xl border border-white/10"
+                className="glass-card p-7 rounded-2xl border border-white/10 flex flex-col justify-start"
               >
-                <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary mb-4">
+                <div className="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center text-primary mb-4 shrink-0">
                   <Check className="w-4 h-4" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
-                <p className="text-white/60 text-xs leading-relaxed font-normal">{item.desc}</p>
+                <h3 className="text-lg font-semibold text-white mb-2 leading-snug">{item.title}</h3>
+                <p className="text-white/70 text-xs sm:text-sm leading-relaxed font-normal">{item.desc}</p>
               </motion.div>
             ))}
           </div>

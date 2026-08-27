@@ -43,9 +43,9 @@ export default function AboutClient() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl text-left"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary font-mono text-xs font-medium uppercase tracking-wider mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary font-mono text-xs font-medium tracking-wider mb-6">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>ABOUT TRP DIGITALS</span>
+              <span>About TRP Digitals</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
@@ -107,7 +107,7 @@ export default function AboutClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="max-w-3xl text-left mb-16"
           >
             <span className="font-mono text-xs font-medium uppercase tracking-widest text-primary mb-3 block">
               CORE PRINCIPLES
@@ -158,7 +158,7 @@ export default function AboutClient() {
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 leading-snug">
               Building TRP Digitals with a simple belief: great digital work should be accessible.
             </h2>
-            <div className="space-y-4 text-white/70 text-sm sm:text-base leading-relaxed font-normal">
+            <div className="space-y-4 text-white/70 text-sm sm:text-base leading-relaxed font-normal max-w-2xl">
               <p>
                 I started TRP Digitals with a simple goal: to help businesses build a stronger digital presence without the complexity, cost, and confusion that often comes with finding the right digital partner.
               </p>

@@ -156,10 +156,10 @@ export default function Services() {
 
                 <Link
                   href="/contact"
-                  className="cta-primary w-full py-3 rounded-xl text-xs font-semibold text-center inline-flex items-center justify-center gap-2 mt-4 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  className="w-full py-3 rounded-xl text-xs font-semibold text-center inline-flex items-center justify-center gap-2 mt-4 glass border border-white/10 text-white/80 hover:text-white hover:border-primary/40 hover:bg-primary/5 transition-all group/btn"
                 >
                   <span>Discuss Project</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 text-primary group-hover/btn:translate-x-0.5 transition-transform" />
                 </Link>
               </motion.div>
             );

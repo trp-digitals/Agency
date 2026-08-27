@@ -22,9 +22,9 @@ export default function Hero() {
           {/* Left Column: Text & CTAs (Immediate Server Render) */}
           <div className="lg:col-span-6 flex flex-col items-start text-left fade-in">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary font-mono text-xs font-medium uppercase tracking-wider mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary font-mono text-xs font-medium tracking-wider mb-6">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>DIGITAL SOLUTIONS AGENCY</span>
+              <span>Digital Solutions Agency</span>
             </div>
 
             {/* Headline */}
@@ -50,9 +50,10 @@ export default function Hero() {
 
               <Link
                 href="/services"
-                className="px-8 py-4 rounded-full glass border-white/15 text-white/80 font-semibold hover:bg-white/5 hover:text-white transition-all text-sm flex items-center justify-center"
+                className="group px-8 py-4 rounded-full glass border-white/15 text-white/80 font-semibold hover:bg-white/5 hover:text-white transition-all text-sm flex items-center justify-center gap-2"
               >
-                View Services
+                <span>View Services</span>
+                <ArrowRight className="w-4 h-4 text-white/60 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
               </Link>
             </div>
 

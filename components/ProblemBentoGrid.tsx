@@ -72,11 +72,13 @@ export default function ProblemBentoGrid() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className={`glass-card p-8 rounded-2xl border border-white/10 relative overflow-hidden ${prob.colSpan}`}
               >
-                <div className="flex justify-between items-start mb-6">
-                  <span className="text-2xl font-mono font-medium text-primary/40">{prob.num}</span>
-                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-primary">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary shrink-0">
                     <Icon className="w-5 h-5" />
                   </div>
+                  <span className="text-xs font-mono font-semibold text-primary/80 uppercase tracking-wider px-2.5 py-1 rounded-md bg-primary/10 border border-primary/20">
+                    Challenge {prob.num}
+                  </span>
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3">{prob.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed font-normal">{prob.desc}</p>

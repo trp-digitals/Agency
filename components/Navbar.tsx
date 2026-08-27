@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import MaxWrapper from "./ui/MaxWrapper";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
@@ -113,21 +113,23 @@ export default function Navbar() {
             </nav>
             <Link
               href="/contact"
-              className="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-semibold neon-purple hover:scale-105 active:scale-95 transition-all"
+              className="cta-primary px-6 py-2.5 rounded-full text-white text-sm font-semibold hover:scale-105 active:scale-95 transition-all inline-flex items-center gap-2 shadow-[0_0_25px_rgba(192,132,252,0.3)]"
             >
-              Get Started
+              <span>Get Started</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
           {/* Mobile Toggle Button */}
           <button
+            type="button"
             aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
-            className="md:hidden touch-target w-12 h-12 flex items-center justify-center text-foreground hover:bg-white/5 rounded-xl transition-colors"
+            className="md:hidden touch-target w-10 h-10 flex items-center justify-center text-foreground hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </MaxWrapper>
       </header>
@@ -197,9 +199,10 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full py-3.5 px-4 rounded-xl bg-primary text-white font-semibold text-center flex items-center justify-center shadow-[0_0_25px_rgba(192,132,252,0.3)] hover:brightness-110 active:scale-95 transition-all"
+                  className="w-full py-3.5 px-4 rounded-xl cta-primary text-white font-semibold text-center flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(192,132,252,0.3)] hover:brightness-110 active:scale-95 transition-all"
                 >
-                  Get Started — Free Consult
+                  <span>Get Started — Free Consult</span>
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </motion.div>

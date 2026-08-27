@@ -8,10 +8,13 @@ export default function ServicesCompareMatrix() {
   return (
     <div className="text-center mt-12">
       <button
+        type="button"
         onClick={() => setShowCompareModal(!showCompareModal)}
-        className="font-mono text-xs font-medium text-primary hover:underline cursor-pointer"
+        aria-expanded={showCompareModal}
+        className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border border-primary/30 text-white hover:text-primary hover:border-primary font-mono text-xs font-medium transition-all cursor-pointer hover:bg-primary/5 active:scale-95"
       >
-        {showCompareModal ? "Hide Package Comparison Matrix ▲" : "Compare All Package Features Side-by-Side ▼"}
+        <span>{showCompareModal ? "Hide Package Comparison Matrix" : "Compare All Package Features Side-by-Side"}</span>
+        <span className="text-primary font-bold">{showCompareModal ? "▲" : "▼"}</span>
       </button>
 
       {showCompareModal && (

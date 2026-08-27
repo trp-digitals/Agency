@@ -57,8 +57,7 @@ export default function Footer() {
           <div>
             <h4 className="font-mono text-xs font-semibold mb-6 text-white tracking-wider uppercase">Get in Touch</h4>
             <ul className="flex flex-col gap-3 text-sm font-normal text-foreground/60">
-              <li className="flex items-center gap-2">
-                <FaEnvelope className="text-primary shrink-0" size={15} />
+              <li>
                 <a href="mailto:trpdigitals.dev@gmail.com" className="hover:text-primary transition-colors">
                   trpdigitals.dev@gmail.com
                 </a>

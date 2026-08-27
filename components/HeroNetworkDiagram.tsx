@@ -129,7 +129,7 @@ export default function HeroNetworkDiagram() {
           <span className="text-lg min-[400px]:text-xl sm:text-2xl font-bold tracking-tight text-white drop-shadow-[0_0_12px_rgba(192,132,252,0.4)]">
             TRP
           </span>
-          <span className="text-[9px] min-[400px]:text-[10px] sm:text-xs font-mono font-medium tracking-widest text-gradient uppercase">
+          <span className="text-[10px] sm:text-xs font-mono font-medium tracking-widest text-gradient uppercase">
             DIGITALS
           </span>
         </div>
@@ -140,11 +140,11 @@ export default function HeroNetworkDiagram() {
             key={i}
             className={`absolute z-20 flex flex-col pointer-events-auto cursor-pointer group ${svc.badgePos}`}
           >
-            <div className="glass px-2 py-1 min-[400px]:px-2.5 min-[400px]:py-1.2 sm:px-3 sm:py-1.5 rounded-lg sm:rounded-xl border border-primary/30 bg-[#0c0c14]/90 shadow-xl backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(192,132,252,0.4)]">
-              <p className="text-[8.5px] min-[400px]:text-[9.5px] sm:text-[11px] font-semibold tracking-normal text-white whitespace-nowrap">
+            <div className="glass px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg sm:rounded-xl border border-primary/30 bg-[#0c0c14]/90 shadow-xl backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(192,132,252,0.4)]">
+              <p className="text-[10.5px] sm:text-xs font-semibold tracking-normal text-white whitespace-nowrap">
                 {svc.title}
               </p>
-              <p className="text-[7px] min-[400px]:text-[8px] sm:text-[9px] font-normal text-white/60 whitespace-nowrap">
+              <p className="text-[10px] sm:text-[11px] font-normal text-white/70 whitespace-nowrap">
                 {svc.subtitle}
               </p>
             </div>
